@@ -4,76 +4,153 @@ title: Home
 ---
 
 <style>
-/* Additional homepage-specific styles */
+/* Homepage-specific styles */
 .hero-section {
-  background-color: #f9f9f9;
-  padding: 80px 20px;
+  background-image: linear-gradient(rgba(67, 81, 89, 0.3), rgba(67, 81, 89, 0.3)), url('{{ "/assets/images/hero-background.png" | relative_url }}');
+  background-size: cover;
+  background-position: center;
+  padding: 100px 20px;
   text-align: center;
+  position: relative;
+  color: white;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-section h1 {
-  font-size: 48px;
+  font-size: 56px;
   font-weight: 700;
-  color: #333;
   margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 .hero-section .tagline {
-  font-size: 24px;
-  color: #666;
-  margin-bottom: 30px;
+  font-size: 28px;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 
-.about-section {
-  padding: 60px 20px;
+.hero-logo {
+  margin-top: 30px;
+}
+
+.hero-logo img {
+  max-width: 250px;
+  height: auto;
+  filter: brightness(1.1);
+}
+
+.clients-section {
+  background-color: #EEF0F2;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.clients-section img {
+  max-width: 900px;
+  width: 100%;
+  height: auto;
+}
+
+.founder-section {
+  padding: 80px 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.about-section h2 {
-  font-size: 36px;
-  color: #333;
-  margin-bottom: 20px;
-  text-align: center;
+.founder-content {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.about-section p {
+.founder-image {
+  flex: 0 0 300px;
+}
+
+.founder-image img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.founder-bio {
+  flex: 1;
+  min-width: 300px;
+}
+
+.founder-bio h2 {
+  font-size: 36px;
+  color: #435159;
+  margin-bottom: 10px;
+}
+
+.founder-bio h3 {
+  font-size: 24px;
+  color: #FAB80A;
+  margin-bottom: 25px;
+  font-weight: 400;
+}
+
+.founder-bio p {
   font-size: 18px;
-  line-height: 1.6;
-  color: #666;
+  line-height: 1.7;
+  color: #4A4A4A;
   margin-bottom: 20px;
 }
 
 .services-section {
-  background-color: #f5f5f5;
-  padding: 60px 20px;
+  background-color: #FFF3E2;
+  padding: 80px 20px;
 }
 
 .services-section h2 {
-  font-size: 36px;
-  color: #333;
-  margin-bottom: 40px;
+  font-size: 42px;
+  color: #435159;
+  margin-bottom: 50px;
   text-align: center;
 }
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .service-card {
   background: white;
-  padding: 30px;
+  padding: 40px 30px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.service-icon {
+  margin-bottom: 25px;
+}
+
+.service-icon img {
+  width: 50px;
+  height: 50px;
 }
 
 .service-card h3 {
   font-size: 24px;
-  color: #333;
+  color: #435159;
   margin-bottom: 15px;
 }
 
@@ -83,40 +160,98 @@ title: Home
   color: #666;
 }
 
-.cta-section {
-  padding: 60px 20px;
+.projects-section {
+  padding: 80px 20px;
+  background-color: white;
+}
+
+.projects-section h2 {
+  font-size: 42px;
+  color: #435159;
+  margin-bottom: 50px;
   text-align: center;
-  background-color: #326CE5;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.cta-section {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #435159;
   color: white;
 }
 
 .cta-section h2 {
-  font-size: 36px;
+  font-size: 42px;
   margin-bottom: 20px;
   color: white;
 }
 
 .cta-section p {
-  font-size: 20px;
-  margin-bottom: 30px;
+  font-size: 22px;
+  margin-bottom: 40px;
 }
 
 .cta-button {
   display: inline-block;
-  padding: 15px 40px;
-  background-color: white;
-  color: #326CE5;
-  font-size: 18px;
-  font-weight: 600;
+  padding: 18px 50px;
+  background-color: #FAB80A;
+  color: #435159;
+  font-size: 20px;
+  font-weight: 700;
   border-radius: 5px;
   text-decoration: none;
   transition: all 0.3s;
 }
 
 .cta-button:hover {
-  background-color: #f0f0f0;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  background-color: #E5A609;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(250, 184, 10, 0.4);
+}
+
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 36px;
+  }
+
+  .hero-section .tagline {
+    font-size: 20px;
+  }
+
+  .founder-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .founder-image {
+    flex: 0 0 auto;
+  }
 }
 </style>
 
@@ -124,69 +259,98 @@ title: Home
 <div class="hero-section">
   <h1>Extraordinary Brand Marketing</h1>
   <p class="tagline">For Food & Beverage Start-Ups</p>
-  <p>Building strong brands for emerging food and beverage companies</p>
+  <div class="hero-logo">
+    <img src="{{ '/assets/images/Circle-Variation-grey.png' | relative_url }}" alt="Nourishing Food Marketing Logo" />
+  </div>
 </div>
 
-<!-- About Section -->
-<section class="about-section">
-  <h2>About Nourishing Food Marketing</h2>
-  <p>
-    We specialize in helping food and beverage start-ups build extraordinary brands.
-    With years of experience in the food industry, we understand the unique challenges
-    and opportunities that come with launching and growing a food brand.
-  </p>
-  <p>
-    Our approach combines strategic thinking with hands-on implementation to help you
-    create a brand that resonates with your target audience and stands out in the
-    competitive food marketplace.
-  </p>
+<!-- Clients Section -->
+<section class="clients-section">
+  <img src="{{ '/assets/images/Clients-grey.png' | relative_url }}" alt="Our Clients" />
+</section>
+
+<!-- Founder Section -->
+<section class="founder-section">
+  <div class="founder-content">
+    <div class="founder-image">
+      <img src="{{ '/assets/images/christie-headshot.jpg' | relative_url }}" alt="Christie Lee" />
+    </div>
+    <div class="founder-bio">
+      <h2>Christie Lee</h2>
+      <h3>Founder & Brand Strategist</h3>
+      <p>
+        With over a decade of experience in food and beverage marketing, Christie has helped dozens
+        of emerging brands find their voice and thrive in competitive markets. Her passion lies in
+        empowering food entrepreneurs with the strategic tools and marketing know-how they need to succeed.
+      </p>
+      <p>
+        Christie's approach combines data-driven insights with creative storytelling to build brands
+        that resonate deeply with consumers. She believes every food brand has a unique story to tell,
+        and her mission is to help founders tell it in the most compelling way possible.
+      </p>
+    </div>
+  </div>
 </section>
 
 <!-- Services Section -->
 <section class="services-section">
-  <h2>Our Services</h2>
+  <h2>How We Help</h2>
   <div class="services-grid">
     <div class="service-card">
-      <h3>Brand Strategy</h3>
+      <div class="service-icon">
+        <img src="{{ '/assets/images/icons/DNA-icon.png' | relative_url }}" alt="Brand DNA Icon" />
+      </div>
+      <h3>Brand DNA</h3>
       <p>
-        We help you define your brand's DNA, value proposition, and positioning
-        to create a foundation for long-term success.
+        Define your brand's core identity, values, and personality to create
+        a foundation for authentic marketing and lasting customer relationships.
       </p>
     </div>
     <div class="service-card">
-      <h3>Marketing Workshops</h3>
+      <div class="service-icon">
+        <img src="{{ '/assets/images/icons/Product-Positioning.png' | relative_url }}" alt="Product Positioning Icon" />
+      </div>
+      <h3>Product Positioning</h3>
       <p>
-        Interactive workshops designed to empower food entrepreneurs with the
-        marketing knowledge and tools they need to succeed.
+        Craft compelling positioning that differentiates your products and
+        communicates value to your target customers clearly and effectively.
       </p>
     </div>
     <div class="service-card">
-      <h3>DIY Marketing Tools</h3>
+      <div class="service-icon">
+        <img src="{{ '/assets/images/icons/Consumer-Research.png' | relative_url }}" alt="Consumer Research Icon" />
+      </div>
+      <h3>Consumer Research</h3>
       <p>
-        Practical templates, guides, and resources to help you execute your
-        marketing strategy effectively and efficiently.
+        Gain deep insights into your target audience's needs, preferences,
+        and behaviors to inform smarter marketing decisions.
       </p>
     </div>
     <div class="service-card">
-      <h3>1-on-1 Coaching</h3>
+      <div class="service-icon">
+        <img src="{{ '/assets/images/icons/marketing-strategy.png' | relative_url }}" alt="Marketing Strategy Icon" />
+      </div>
+      <h3>Marketing Strategy</h3>
       <p>
-        Personalized coaching sessions to tackle your specific marketing challenges
-        and accelerate your brand's growth.
+        Develop comprehensive marketing plans that align with your business
+        goals and drive measurable growth for your brand.
       </p>
     </div>
-    <div class="service-card">
-      <h3>Brand Consultancy</h3>
-      <p>
-        Comprehensive brand consulting services to help you build and scale
-        your food or beverage brand from concept to market.
-      </p>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section class="projects-section">
+  <h2>Featured Projects</h2>
+  <div class="projects-grid">
+    <div class="project-card">
+      <img src="{{ '/assets/images/projects/Olly-Project.png' | relative_url }}" alt="OLLY Project" />
     </div>
-    <div class="service-card">
-      <h3>Market Research</h3>
-      <p>
-        In-depth market analysis to understand your competitors, target audience,
-        and market opportunities.
-      </p>
+    <div class="project-card">
+      <img src="{{ '/assets/images/projects/PetitPot-Project.png' | relative_url }}" alt="Petit Pot Project" />
+    </div>
+    <div class="project-card">
+      <img src="{{ '/assets/images/projects/TinyHero-Project.png' | relative_url }}" alt="Tiny Hero Project" />
     </div>
   </div>
 </section>
