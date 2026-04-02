@@ -4,15 +4,14 @@ title: Home
 ---
 
 <style>
-/* Homepage-specific styles */
+/* Migrated styles from original OnePress theme */
 .hero-section {
-  background-image: linear-gradient(rgba(67, 81, 89, 0.3), rgba(67, 81, 89, 0.3)), url('{{ "/assets/images/hero-background.png" | relative_url }}');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('{{ "/assets/images/hero-background.png" | relative_url }}');
   background-size: cover;
   background-position: center;
   padding: 100px 20px;
   text-align: center;
-  position: relative;
-  color: white;
+  color: #fff3e2;
   min-height: 500px;
   display: flex;
   flex-direction: column;
@@ -21,63 +20,74 @@ title: Home
 }
 
 .hero-section h1 {
-  font-size: 56px;
+  font-size: 48px;
   font-weight: 700;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  margin-bottom: 30px;
+  color: #fff3e2;
 }
 
-.hero-section .tagline {
-  font-size: 28px;
-  margin-bottom: 40px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+.hero-section .hero-logo {
+  margin-top: 20px;
 }
 
-.hero-logo {
-  margin-top: 30px;
-}
-
-.hero-logo img {
-  max-width: 250px;
+.hero-section .hero-logo img {
+  max-width: 300px;
   height: auto;
-  filter: brightness(1.1);
 }
 
-.clients-section {
-  background-color: #EEF0F2;
+.hero-section h3 {
+  font-size: 24px;
+  font-weight: 400;
+  margin-top: 30px;
+  color: #fff3e2;
+}
+
+/* Clients Section */
+.section-clients {
+  background-color: #eef0f2;
   padding: 40px 20px;
   text-align: center;
 }
 
-.clients-section img {
+.section-clients img {
   max-width: 900px;
   width: 100%;
   height: auto;
 }
 
-.founder-section {
+/* Founder Section */
+.section-founder {
+  background-color: #fff3e2;
   padding: 80px 20px;
+}
+
+.section-founder .container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
+.section-founder h2 {
+  font-size: 42px;
+  color: #435159;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
 .founder-content {
   display: flex;
-  gap: 60px;
-  align-items: center;
+  gap: 40px;
+  align-items: flex-start;
   flex-wrap: wrap;
 }
 
 .founder-image {
-  flex: 0 0 300px;
+  flex: 0 0 276px;
 }
 
 .founder-image img {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
+  width: 276px;
+  height: 350px;
   object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .founder-bio {
@@ -85,87 +95,130 @@ title: Home
   min-width: 300px;
 }
 
-.founder-bio h2 {
-  font-size: 36px;
-  color: #435159;
-  margin-bottom: 10px;
-}
-
-.founder-bio h3 {
-  font-size: 24px;
-  color: #FAB80A;
-  margin-bottom: 25px;
-  font-weight: 400;
-}
-
 .founder-bio p {
   font-size: 18px;
   line-height: 1.7;
-  color: #4A4A4A;
+  color: #435159;
   margin-bottom: 20px;
 }
 
-.services-section {
-  background-color: #FFF3E2;
+/* Services Section */
+.section-services {
+  background-color: #fff3e2;
   padding: 80px 20px;
 }
 
-.services-section h2 {
+.section-services h2 {
   font-size: 42px;
   color: #435159;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   text-align: center;
+}
+
+.section-services .section-desc {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 50px;
+  font-size: 18px;
+  color: #435159;
 }
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.service-card {
-  background: white;
-  padding: 40px 30px;
+.service-item {
+  background: #eef0f2;
+  padding: 30px;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  text-align: center;
   transition: transform 0.3s;
 }
 
-.service-card:hover {
+.service-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
 }
 
-.service-icon {
-  margin-bottom: 25px;
+.service-item .service-image {
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-.service-icon img {
-  width: 50px;
-  height: 50px;
+.service-item .service-image img {
+  max-width: 50px;
+  height: auto;
 }
 
-.service-card h3 {
+.service-item h4 {
   font-size: 24px;
+  color: #435159;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.service-item p {
+  font-size: 16px;
+  line-height: 1.6;
   color: #435159;
   margin-bottom: 15px;
 }
 
-.service-card p {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #666;
+.service-item hr {
+  border: 0;
+  border-top: 1px solid #435159;
+  margin: 15px 0;
+  opacity: 0.3;
 }
 
-.projects-section {
+/* CTA Section */
+.section-cta {
+  background-color: #435159;
   padding: 80px 20px;
-  background-color: white;
+  text-align: center;
+  color: #fff3e2;
 }
 
-.projects-section h2 {
+.section-cta h2 {
+  font-size: 42px;
+  margin-bottom: 20px;
+  color: #fff3e2;
+}
+
+.section-cta p {
+  font-size: 22px;
+  margin-bottom: 40px;
+  color: #fff3e2;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 18px 50px;
+  background-color: #fab80a;
+  color: #435159;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #e5a609;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(250, 184, 10, 0.4);
+  color: #435159;
+}
+
+/* Projects Section */
+.section-projects {
+  background-color: #eef0f2;
+  padding: 80px 20px;
+}
+
+.section-projects h2 {
   font-size: 42px;
   color: #435159;
   margin-bottom: 50px;
@@ -180,7 +233,7 @@ title: Home
   margin: 0 auto;
 }
 
-.project-card {
+.project-item {
   background: white;
   border-radius: 8px;
   overflow: hidden;
@@ -188,64 +241,30 @@ title: Home
   transition: transform 0.3s;
 }
 
-.project-card:hover {
+.project-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
 
-.project-card img {
+.project-item img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-.cta-section {
-  padding: 80px 20px;
-  text-align: center;
-  background-color: #435159;
-  color: white;
-}
-
-.cta-section h2 {
-  font-size: 42px;
-  margin-bottom: 20px;
-  color: white;
-}
-
-.cta-section p {
-  font-size: 22px;
-  margin-bottom: 40px;
-}
-
-.cta-button {
-  display: inline-block;
-  padding: 18px 50px;
-  background-color: #FAB80A;
-  color: #435159;
-  font-size: 20px;
-  font-weight: 700;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: all 0.3s;
-}
-
-.cta-button:hover {
-  background-color: #E5A609;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(250, 184, 10, 0.4);
-}
-
+/* Responsive */
 @media (max-width: 768px) {
   .hero-section h1 {
-    font-size: 36px;
+    font-size: 32px;
   }
 
-  .hero-section .tagline {
-    font-size: 20px;
+  .hero-section h3 {
+    font-size: 18px;
   }
 
   .founder-content {
     flex-direction: column;
+    align-items: center;
     text-align: center;
   }
 
@@ -256,110 +275,106 @@ title: Home
 </style>
 
 <!-- Hero Section -->
-<div class="hero-section">
-  <h1>Extraordinary Brand Marketing</h1>
-  <p class="tagline">For Food & Beverage Start-Ups</p>
+<section class="hero-section">
+  <h1>Take Flight & Scale</h1>
   <div class="hero-logo">
     <img src="{{ '/assets/images/Circle-Variation-grey.png' | relative_url }}" alt="Nourishing Food Marketing Logo" />
   </div>
-</div>
+  <h3>Extraordinary Brand Marketing for Food & Beverage Start-Ups</h3>
+</section>
 
 <!-- Clients Section -->
-<section class="clients-section">
+<section class="section-clients">
   <img src="{{ '/assets/images/Clients-grey.png' | relative_url }}" alt="Our Clients" />
 </section>
 
 <!-- Founder Section -->
-<section class="founder-section">
-  <div class="founder-content">
-    <div class="founder-image">
-      <img src="{{ '/assets/images/christie-headshot.jpg' | relative_url }}" alt="Christie Lee" />
-    </div>
-    <div class="founder-bio">
-      <h2>Christie Lee</h2>
-      <h3>Founder & Brand Strategist</h3>
-      <p>
-        With over a decade of experience in food and beverage marketing, Christie has helped dozens
-        of emerging brands find their voice and thrive in competitive markets. Her passion lies in
-        empowering food entrepreneurs with the strategic tools and marketing know-how they need to succeed.
-      </p>
-      <p>
-        Christie's approach combines data-driven insights with creative storytelling to build brands
-        that resonate deeply with consumers. She believes every food brand has a unique story to tell,
-        and her mission is to help founders tell it in the most compelling way possible.
-      </p>
+<section class="section-founder">
+  <div class="container">
+    <h2>Meet Our Founder</h2>
+    <div class="founder-content">
+      <div class="founder-image">
+        <img src="{{ '/assets/images/christie-headshot.jpg' | relative_url }}" alt="Christie Lee Headshot" />
+      </div>
+      <div class="founder-bio">
+        <p>Christie loves the thrill of building great brands. She has worked in the CPG industry for 13 years, with deep CPG start-up roots from eight years working at brands with less than fifteen people. Christie founded and built her own quinoa start-up, <a href="https://www.tinyherofoods.com">Tiny Hero</a>, plus she knows how Big Food thinks and works from her classical brand marketing training at Big Food CPG (Clorox). She holds an MBA from Harvard Business School and a BS from Olin College of Engineering.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- Services Section -->
-<section class="services-section">
-  <h2>How We Help</h2>
-  <div class="services-grid">
-    <div class="service-card">
-      <div class="service-icon">
-        <img src="{{ '/assets/images/icons/DNA-icon.png' | relative_url }}" alt="Brand DNA Icon" />
-      </div>
-      <h3>Brand DNA</h3>
-      <p>
-        Define your brand's core identity, values, and personality to create
-        a foundation for authentic marketing and lasting customer relationships.
-      </p>
+<section class="section-services">
+  <div class="container">
+    <h2>How We Can Help</h2>
+    <div class="section-desc">
+      <p>Nourishing Food Marketing helps you build strong consumer, customer, and company value propositions. We help you get clear about your Marketing Strategy and execute on it with our trusted network of freelancers & agencies.</p>
     </div>
-    <div class="service-card">
-      <div class="service-icon">
-        <img src="{{ '/assets/images/icons/Product-Positioning.png' | relative_url }}" alt="Product Positioning Icon" />
+    <div class="services-grid">
+      <div class="service-item">
+        <div class="service-image">
+          <img src="{{ '/assets/images/icons/DNA-icon.png' | relative_url }}" alt="Brand DNA Icon" />
+        </div>
+        <h4>Brand DNA</h4>
+        <p>Developing strong brand equity is critical for your long-term success in a world where Private Label is constantly gaining share. Your brand must represent more than your products; it's about an experience and a lifestyle.</p>
+        <hr>
+        <p>Mini Case Study: We ran a Brand DNA Workshop for Real Fancy Foods, creating their Mission, Values, and Beliefs. We then built on this work with a brand name exploration, resulting in three top names to investigate trademarking.</p>
       </div>
-      <h3>Product Positioning</h3>
-      <p>
-        Craft compelling positioning that differentiates your products and
-        communicates value to your target customers clearly and effectively.
-      </p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">
-        <img src="{{ '/assets/images/icons/Consumer-Research.png' | relative_url }}" alt="Consumer Research Icon" />
-      </div>
-      <h3>Consumer Research</h3>
-      <p>
-        Gain deep insights into your target audience's needs, preferences,
-        and behaviors to inform smarter marketing decisions.
-      </p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">
-        <img src="{{ '/assets/images/icons/marketing-strategy.png' | relative_url }}" alt="Marketing Strategy Icon" />
-      </div>
-      <h3>Marketing Strategy</h3>
-      <p>
-        Develop comprehensive marketing plans that align with your business
-        goals and drive measurable growth for your brand.
-      </p>
-    </div>
-  </div>
-</section>
 
-<!-- Projects Section -->
-<section class="projects-section">
-  <h2>Featured Projects</h2>
-  <div class="projects-grid">
-    <div class="project-card">
-      <img src="{{ '/assets/images/projects/Olly-Project.png' | relative_url }}" alt="OLLY Project" />
-    </div>
-    <div class="project-card">
-      <img src="{{ '/assets/images/projects/PetitPot-Project.png' | relative_url }}" alt="Petit Pot Project" />
-    </div>
-    <div class="project-card">
-      <img src="{{ '/assets/images/projects/TinyHero-Project.png' | relative_url }}" alt="Tiny Hero Project" />
+      <div class="service-item">
+        <div class="service-image">
+          <img src="{{ '/assets/images/icons/Product-Positioning.png' | relative_url }}" alt="Product Positioning Icon" />
+        </div>
+        <h4>Product Positioning</h4>
+        <p>70% of new CPG products fail. We help you get crystal clear about why consumers purchase your products so you beat the odds. What's the consumer need that your product fulfills? What do you do better than anyone else? Hint: it's probably not being gluten free.</p>
+        <hr>
+        <p>Mini Case Study: We refined the product positioning of YES BAR to help them stand out in the crowded snack bar category by evaluating competitive products, researching market trends, and doing consumer research.</p>
+      </div>
+
+      <div class="service-item">
+        <div class="service-image">
+          <img src="{{ '/assets/images/icons/Consumer-Research.png' | relative_url }}" alt="Consumer Research Icon" />
+        </div>
+        <h4>Consumer Insights</h4>
+        <p>Hear from your consumers through scrappy quantitative and qualitative research. These actionable insights will help you make quick, informed decisions.</p>
+        <hr>
+        <p>Mini Case Study: We developed a series of blind taste tests to inform Moonshot's product development. This included developing the consumer screener, writing the survey, running logistics, and analyzing the results.</p>
+      </div>
+
+      <div class="service-item">
+        <div class="service-image">
+          <img src="{{ '/assets/images/icons/marketing-strategy.png' | relative_url }}" alt="Marketing Strategy Icon" />
+        </div>
+        <h4>Strategic Marketing Planning</h4>
+        <p>Develop framework of business and marketing objectives and subsequent marketing workstreams, including marketing support plans for in-store distribution.</p>
+        <hr>
+        <p>Mini Case Study: We created and executed a 2019 Marketing Support Plan for Petit Pot's new Walmart distribution. This integrated digital and shopper marketing campaign resulted in a 15% sales lift and expanded distribution to 1500 doors.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- CTA Section -->
-<section class="cta-section">
-  <h2>Ready to Build Your Brand?</h2>
-  <p>Let's work together to create something extraordinary</p>
+<section class="section-cta">
+  <h2>Ready to Grow Your Brand?</h2>
+  <p>Let's work together to build something extraordinary</p>
   <a href="{{ '/contact' | relative_url }}" class="cta-button">Get in Touch</a>
+</section>
+
+<!-- Projects Section -->
+<section class="section-projects">
+  <h2>Featured Projects</h2>
+  <div class="projects-grid">
+    <div class="project-item">
+      <img src="{{ '/assets/images/projects/Olly-Project.png' | relative_url }}" alt="OLLY Project" />
+    </div>
+    <div class="project-item">
+      <img src="{{ '/assets/images/projects/PetitPot-Project.png' | relative_url }}" alt="Petit Pot Project" />
+    </div>
+    <div class="project-item">
+      <img src="{{ '/assets/images/projects/TinyHero-Project.png' | relative_url }}" alt="Tiny Hero Project" />
+    </div>
+  </div>
 </section>
 
 {{ content }}
