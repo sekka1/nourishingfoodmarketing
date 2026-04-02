@@ -44,7 +44,7 @@ minima:
 # Build settings
 theme: minima
 
-baseurl: ""
+baseurl: "/nourishingfoodmarketing"
 plugins:
  - jekyll-feed
  - jekyll-seo-tag
