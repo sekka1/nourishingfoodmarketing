@@ -4,6 +4,12 @@ title: Home
 ---
 
 <style>
+/* Override wrapper constraint for full-width sections */
+.page-content .wrapper {
+  max-width: 100%;
+  padding: 0;
+}
+
 /* Migrated styles from original OnePress theme */
 .hero-section {
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('{{ "/assets/images/hero-background.png" | relative_url }}');
@@ -42,17 +48,37 @@ title: Home
   color: #fff3e2;
 }
 
-/* Clients Section */
-.section-clients {
+/* About Section */
+.section-about {
   background-color: #eef0f2;
-  padding: 40px 20px;
+  padding: 80px 20px;
+}
+
+.section-about .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-about h2 {
+  font-size: 42px;
+  color: #435159;
+  margin-bottom: 40px;
   text-align: center;
 }
 
-.section-clients img {
-  max-width: 900px;
-  width: 100%;
+.section-about p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #435159;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.section-about img {
+  max-width: 100%;
   height: auto;
+  display: block;
+  margin: 40px auto;
 }
 
 /* Founder Section */
@@ -102,10 +128,41 @@ title: Home
   margin-bottom: 20px;
 }
 
+/* Approach Section */
+.section-approach {
+  background-color: #eef0f2;
+  padding: 80px 20px;
+  padding-bottom: 0;
+}
+
+.section-approach .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-approach h2 {
+  font-size: 42px;
+  color: #435159;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.section-approach p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #435159;
+  margin-bottom: 20px;
+}
+
 /* Services Section */
 .section-services {
   background-color: #fff3e2;
   padding: 80px 20px;
+}
+
+.section-services .container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .section-services h2 {
@@ -181,41 +238,72 @@ title: Home
   color: #fff3e2;
 }
 
-.section-cta h2 {
-  font-size: 42px;
-  margin-bottom: 20px;
-  color: #fff3e2;
+.section-cta .container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.section-cta p {
-  font-size: 22px;
-  margin-bottom: 40px;
+.section-cta .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.section-cta .cta-heading {
+  flex: 1;
+  min-width: 300px;
+}
+
+.section-cta h2 {
+  font-size: 36px;
+  margin-bottom: 0;
   color: #fff3e2;
+  text-align: left;
+}
+
+.section-cta .cta-button-area {
+  flex: 0 0 auto;
 }
 
 .cta-button {
   display: inline-block;
-  padding: 18px 50px;
-  background-color: #fab80a;
-  color: #435159;
-  font-size: 20px;
+  padding: 18px 40px;
+  background-color: transparent;
+  color: #fff3e2;
+  font-size: 18px;
   font-weight: 700;
+  border: 2px solid #fab80a;
   border-radius: 5px;
   text-decoration: none;
   transition: all 0.3s;
 }
 
 .cta-button:hover {
-  background-color: #e5a609;
+  background-color: #fab80a;
+  color: #435159;
   transform: translateY(-3px);
   box-shadow: 0 6px 16px rgba(250, 184, 10, 0.4);
-  color: #435159;
 }
 
 /* Projects Section */
 .section-projects {
   background-color: #eef0f2;
   padding: 80px 20px;
+}
+
+.section-projects .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-projects .section-subtitle {
+  font-size: 18px;
+  color: #435159;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 400;
 }
 
 .section-projects h2 {
@@ -252,6 +340,158 @@ title: Home
   display: block;
 }
 
+.project-item .project-header {
+  padding: 20px;
+}
+
+.project-item .project-small-title {
+  font-size: 18px;
+  color: #435159;
+  margin: 0;
+  text-transform: none;
+}
+
+/* Testimonials Section */
+.section-testimonials {
+  background-color: #fff3e2;
+  padding: 80px 20px;
+  padding-bottom: 100px;
+}
+
+.section-testimonials .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-testimonials h2 {
+  font-size: 42px;
+  color: #435159;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.card-deck {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+.card.card-1 {
+  background-color: #fbc944;
+  border-color: #fbc944;
+}
+
+.card.card-2 {
+  background-color: #ed7582;
+  border-color: #ed7582;
+}
+
+.card.card-3 {
+  background-color: #bcd0c7;
+  border-color: #bcd0c7;
+}
+
+.card .tes_author {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.card .tes_author img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.card .tes__name {
+  font-style: normal;
+  font-size: 18px;
+  font-weight: 700;
+  color: #435159;
+  display: flex;
+  flex-direction: column;
+}
+
+.card .tes__name span {
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 5px;
+}
+
+.card h4 {
+  font-size: 22px;
+  color: #435159;
+  margin-bottom: 15px;
+}
+
+.card p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #435159;
+  margin: 0;
+}
+
+/* Contact Section */
+.section-contact {
+  background-color: #435159;
+  padding: 80px 20px;
+  color: #fff3e2;
+}
+
+.section-contact .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-contact h2 {
+  font-size: 42px;
+  color: #fff3e2;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.section-contact .section-desc h2 {
+  font-size: 28px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-contact .row {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.section-contact .contact-form,
+.section-contact .contact-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.section-contact .contact-form img {
+  max-width: 350px;
+  width: 100%;
+  height: auto;
+  float: right;
+}
+
+.section-contact .contact-info p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #fff3e2;
+  margin-bottom: 20px;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .hero-section h1 {
@@ -271,6 +511,21 @@ title: Home
   .founder-image {
     flex: 0 0 auto;
   }
+
+  .section-cta .row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .section-cta h2 {
+    text-align: center;
+  }
+
+  .section-contact .contact-form img {
+    float: none;
+    margin: 0 auto;
+    display: block;
+  }
 }
 </style>
 
@@ -283,9 +538,15 @@ title: Home
   <h3>Extraordinary Brand Marketing for Food & Beverage Start-Ups</h3>
 </section>
 
-<!-- Clients Section -->
-<section class="section-clients">
-  <img src="{{ '/assets/images/Clients-grey.png' | relative_url }}" alt="Our Clients" />
+<!-- About Section -->
+<section class="section-about">
+  <div class="container">
+    <h2>About</h2>
+    <p>We help new and emerging food and beverage brands take flight and scale. At Nourishing Food Marketing, we've taken classical marketing frameworks from Big Food and right-sized them for fast-paced, resource-constrained businesses.</p>
+    <p>With DIY tools, workshops, and done-for-you services, we help you establish your Brand DNA, develop product positioning, and get really clear and consistent with your messaging.</p>
+    <p>With coaching, we work with brands to develop marketing strategies and execute on them to deliver long-lasting value to your business.</p>
+    <img src="{{ '/assets/images/Clients-grey.png' | relative_url }}" alt="Nourishing Food Marketing Client Logos" />
+  </div>
 </section>
 
 <!-- Founder Section -->
@@ -300,6 +561,14 @@ title: Home
         <p>Christie loves the thrill of building great brands. She has worked in the CPG industry for 13 years, with deep CPG start-up roots from eight years working at brands with less than fifteen people. Christie founded and built her own quinoa start-up, <a href="https://www.tinyherofoods.com">Tiny Hero</a>, plus she knows how Big Food thinks and works from her classical brand marketing training at Big Food CPG (Clorox). She holds an MBA from Harvard Business School and a BS from Olin College of Engineering.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- Approach Section -->
+<section class="section-approach">
+  <div class="container">
+    <h2>We Get More Done With Less!</h2>
+    <p>Our way of working is strongly shaped by Christie's experiences starting her own food brand. She truly understands what it means to be a self-starter and build a brand from scratch in a fast-moving, resource-constrained environment. Just because you're a small brand doesn't mean that you should fly blind. We bring the processes and frameworks from big CPGs and scrappily (and selectively) implement them in entrepreneurial environments. We take foundational CPG thinking from Christie's classical brand marketing training, working on Americana food brands like Hidden Valley Ranch and KC Masterpiece BBQ Sauce, to emerging brands.</p>
   </div>
 </section>
 
@@ -356,23 +625,95 @@ title: Home
 
 <!-- CTA Section -->
 <section class="section-cta">
-  <h2>Ready to Grow Your Brand?</h2>
-  <p>Let's work together to build something extraordinary</p>
-  <a href="{{ '/contact' | relative_url }}" class="cta-button">Get in Touch</a>
+  <div class="container">
+    <div class="row">
+      <div class="cta-heading">
+        <h2><span style="color: #fff3e2">Download my FREE 12-page guide on Avoiding the Top 3 Marketing Mistakes that food brands make</span></h2>
+      </div>
+      <div class="cta-button-area">
+        <a href="https://www.nourishingfoodmarketing.com/marketing-consultant/download-avoid-top-3-marketing-mistakes-guide/" class="cta-button">TELL ME MORE!</a>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- Projects Section -->
 <section class="section-projects">
-  <h2>Featured Projects</h2>
-  <div class="projects-grid">
-    <div class="project-item">
-      <img src="{{ '/assets/images/projects/Olly-Project.png' | relative_url }}" alt="OLLY Project" />
+  <div class="container">
+    <h5 class="section-subtitle">Click on a project to learn more</h5>
+    <h2>Selected Work</h2>
+    <div class="projects-grid">
+      <div class="project-item">
+        <img src="{{ '/assets/images/projects/Olly-Project.png' | relative_url }}" alt="OLLY Project" />
+        <div class="project-header">
+          <h5 class="project-small-title">Developing Consumer, Customer, and Company Value Propositions for OLLY's New Products</h5>
+        </div>
+      </div>
+      <div class="project-item">
+        <img src="{{ '/assets/images/projects/PetitPot-Project.png' | relative_url }}" alt="Petit Pot Project" />
+        <div class="project-header">
+          <h5 class="project-small-title">Consumer Insights: Fielding Product Development & Packaging Surveys for Petit Pot</h5>
+        </div>
+      </div>
+      <div class="project-item">
+        <img src="{{ '/assets/images/projects/TinyHero-Project.png' | relative_url }}" alt="Tiny Hero Project" />
+        <div class="project-header">
+          <h5 class="project-small-title">Building a Quinoa Brand from Scratch: Tiny Hero Foods</h5>
+        </div>
+      </div>
     </div>
-    <div class="project-item">
-      <img src="{{ '/assets/images/projects/PetitPot-Project.png' | relative_url }}" alt="Petit Pot Project" />
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="section-testimonials">
+  <div class="container">
+    <h2>Testimonials</h2>
+    <div class="card-deck">
+      <div class="card card-1">
+        <div class="tes_author">
+          <img src="https://www.nourishingfoodmarketing.com/wp-content/uploads/2020/12/Jeremy-Cohen.jpg" alt="Jeremy Cohen" />
+          <cite class="tes__name">Jeremy Cohen<span>Co-Founder, the YES Bar</span></cite>
+        </div>
+        <h4>Made Profound Business Impact</h4>
+        <p><span style="color: #435159">"We worked with Christie to develop our Brand DNA and product positioning. Now that we know who we are and what makes us special, we've effortlessly tackled marketing decisions that would have stopped us in our tracks before. Christie is like a treasure hunter who will find your brand's soul!"</span></p>
+      </div>
+
+      <div class="card card-2">
+        <div class="tes_author">
+          <img src="https://www.nourishingfoodmarketing.com/wp-content/uploads/2021/01/Courtney.jpg" alt="Courtney Gillespie" />
+          <cite class="tes__name">Courtney Gillespie<span>Founder and President, Life's Grape</span></cite>
+        </div>
+        <h4>Critical to Brand Growth</h4>
+        <p><span style="color: #435159">"After learning about us and our brand goals, Christie helped us refine our Brand DNA and Product Positioning, which helped us revamp our marketing to communicate Life's Grape's difference and story. She has helped our brand grow beyond our DIY strategy and we could not be happier with Christie's work!"</span></p>
+      </div>
+
+      <div class="card card-3">
+        <div class="tes_author">
+          <img src="https://www.nourishingfoodmarketing.com/wp-content/uploads/2020/02/Julia.jpg" alt="Julia Collins" />
+          <cite class="tes__name">Julia Collins<span>Founder and CEO, Moonshot</span></cite>
+        </div>
+        <h4>Food Start-Up Expert</h4>
+        <p><span style="color: #435159">"Christie is an essential part of my team. Moonshot is a new brand racing to market and her marketing expertise and network has greatly accelerated my brand's development. She is responsive, crazy smart, and treats my brand like her own. You'll be in the very best hands with Nourishing Food Marketing!"</span></p>
+      </div>
     </div>
-    <div class="project-item">
-      <img src="{{ '/assets/images/projects/TinyHero-Project.png' | relative_url }}" alt="Tiny Hero Project" />
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="section-contact">
+  <div class="container">
+    <h2>Get in Touch</h2>
+    <div class="section-desc">
+      <h2><span style="color: #fff3e2">Set up a free 20 minute consultation to learn more about how we can jump on-board and help you grow your brand.</span></h2>
+    </div>
+    <div class="row">
+      <div class="contact-form">
+        <img src="https://www.nourishingfoodmarketing.com/wp-content/uploads/2020/06/Christie-Lee-Picture-Bubble-Tea-Circle-Tan-Navy.png" alt="Christie Lee Headshot Picture" width="350" />
+      </div>
+      <div class="contact-info">
+        <p>For inquiries, please contact us at <a href="mailto:info@nourishingfoodmarketing.com" style="color: #fab80a;">info@nourishingfoodmarketing.com</a></p>
+      </div>
     </div>
   </div>
 </section>

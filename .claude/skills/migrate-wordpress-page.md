@@ -53,15 +53,23 @@ curl -O [IMAGE_URL]
 
 ### 4. Extract Page Content Sections
 
-Identify and extract the main content sections from the WordPress HTML:
+**CRITICAL:** Identify ALL sections from the original page. Missing sections is the most common migration error.
 
 ```bash
-# Find section IDs
-grep -n "section id=" /tmp/original-page.html
+# Find ALL section IDs and their order
+grep -o '<section id="[^"]*"' /tmp/original-page.html | sort -u
 
-# Extract specific sections
-sed -n '/<section id="SECTION_NAME"/,/<\/section>/p' /tmp/original-page.html > /tmp/section-SECTION_NAME.txt
+# Extract each section individually for review
+for section in about founder approach services section-cta projects testimonials contact; do
+  sed -n "/<section id=\"$section\"/,/<\/section>/p" /tmp/original-page.html > /tmp/section-$section.txt
+done
 ```
+
+**Important:**
+- List all sections found in the original page
+- Include sections in the EXACT order they appear
+- Do NOT rename sections (e.g., "Selected Work" not "Featured Projects")
+- Do NOT omit any sections - they all need to be migrated
 
 ### 5. Extract Inline CSS
 
@@ -83,13 +91,27 @@ title: [Page Title]
 ---
 ```
 
+**IMPORTANT: Fix Width Constraint**
+The default Jekyll layout wraps content in a `.wrapper` div with max-width constraint. Override this for full-width sections:
+
+```css
+/* Override wrapper constraint for full-width sections */
+.page-content .wrapper {
+  max-width: 100%;
+  padding: 0;
+}
+```
+
 **Inline Styles:**
 - Copy critical CSS from the original page
 - Convert WordPress image URLs to Jekyll asset paths: `{{ '/assets/images/[IMAGE]' | relative_url }}`
 - Maintain original color scheme: #fab80a (accent yellow), #435159 (dark blue), #fff3e2 (cream), #eef0f2 (light gray)
+- Add `.container { max-width: 1200px; margin: 0 auto; }` for section content
 
 **HTML Content:**
-- Copy section structure from original page
+- Copy section structure from original page in EXACT order
+- Use the EXACT text from the original - do not rewrite or make up new content
+- Keep section titles exactly as they appear in the original
 - Remove WordPress-specific classes/IDs not needed for styling
 - Simplify HTML while preserving visual structure
 - Convert all external asset references to local paths
@@ -175,23 +197,42 @@ assets/
 3. **Don't** forget to convert WordPress `wp-content` URLs to local paths
 4. **Don't** include analytics scripts or third-party tracking
 5. **Don't** copy WordPress plugin CSS/JS that isn't needed
-6. **Do** preserve responsive breakpoints (typically @media max-width: 768px)
-7. **Do** maintain hover effects and transitions
-8. **Do** keep the visual hierarchy and spacing
+6. **Don't** skip any sections - ALL sections must be migrated
+7. **Don't** rename sections or change copy - use EXACT text from original
+8. **Don't** forget to override the wrapper width constraint for full-width layouts
+9. **Do** preserve responsive breakpoints (typically @media max-width: 768px)
+10. **Do** maintain hover effects and transitions
+11. **Do** keep the visual hierarchy and spacing
+12. **Do** verify ALL sections are present before considering migration complete
 
 ## Example Migration: Home Page
 
 See the completed home page migration in:
-- `_layouts/home.html` - New migrated layout
+- `_layouts/home.html` - Fully migrated layout with ALL sections
 - `_layouts/home-old-backup.html` - Original simple layout (backup)
 
 This migration successfully:
+- ✅ Identified and extracted ALL 10 sections from the original page
 - ✅ Downloaded all required images (already in assets/)
-- ✅ Extracted content from 5 main sections
+- ✅ Fixed width constraint issue by overriding `.wrapper` max-width
+- ✅ Preserved exact copy from original (no rewrites)
+- ✅ Used exact section titles ("Selected Work" not "Featured Projects")
 - ✅ Inlined critical CSS from OnePress theme
 - ✅ Converted all asset paths to Jekyll format
 - ✅ Removed all external dependencies
 - ✅ Preserved original design and branding
+
+**Section Order (COMPLETE LIST):**
+1. Hero/Header - "Take Flight & Scale"
+2. About - "About"
+3. Founder - "Meet Our Founder"
+4. Approach - "We Get More Done With Less!"
+5. Services - "How We Can Help" (4 service cards)
+6. CTA - "Download my FREE 12-page guide..."
+7. Projects - "Selected Work" (with subtitle "Click on a project to learn more")
+8. Testimonials - "Testimonials" (3 testimonial cards)
+9. Contact - "Get in Touch"
+10. Blog - (section exists but may not render content)
 
 ## Usage
 
