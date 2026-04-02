@@ -10,6 +10,16 @@ title: Home
   padding: 0;
 }
 
+/* Sticky Header - Full Width */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
 /* Migrated styles from original OnePress theme */
 .hero-section {
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('{{ "/assets/images/hero-background.png" | relative_url }}');
@@ -182,7 +192,7 @@ title: Home
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
@@ -492,6 +502,110 @@ title: Home
   margin-bottom: 20px;
 }
 
+/* Blog Section - Our Thoughts */
+.section-blog {
+  background-color: #eef0f2;
+  padding: 80px 20px;
+}
+
+.section-blog .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-blog h2 {
+  font-size: 42px;
+  color: #435159;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.blog-entry {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.list-article {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+  align-items: flex-start;
+}
+
+.list-article-thumb {
+  flex: 0 0 300px;
+}
+
+.list-article-thumb img {
+  width: 300px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.list-article-content {
+  flex: 1;
+}
+
+.list-article-content h2 {
+  font-size: 24px;
+  color: #435159;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.list-article-content h2 a {
+  color: #435159;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.list-article-content h2 a:hover {
+  color: #fab80a;
+}
+
+.list-article-content .entry-excerpt p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #435159;
+  margin: 0;
+}
+
+.all-news {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.btn-theme-primary-outline {
+  display: inline-block;
+  padding: 15px 35px;
+  background-color: transparent;
+  color: #435159;
+  font-size: 16px;
+  font-weight: 700;
+  border: 2px solid #fab80a;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.btn-theme-primary-outline:hover {
+  background-color: #fab80a;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* Newsletter Section */
+.section-newsletter {
+  background-color: #fff3e2;
+  padding: 80px 20px;
+}
+
+.section-newsletter .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .hero-section h1 {
@@ -500,6 +614,10 @@ title: Home
 
   .hero-section h3 {
     font-size: 18px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
   }
 
   .founder-content {
@@ -525,6 +643,19 @@ title: Home
     float: none;
     margin: 0 auto;
     display: block;
+  }
+
+  .list-article {
+    flex-direction: column;
+  }
+
+  .list-article-thumb {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .list-article-thumb img {
+    width: 100%;
   }
 }
 </style>
@@ -715,6 +846,63 @@ title: Home
         <p>For inquiries, please contact us at <a href="mailto:info@nourishingfoodmarketing.com" style="color: #fab80a;">info@nourishingfoodmarketing.com</a></p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- Blog Section - Our Thoughts -->
+<section class="section-blog">
+  <div class="container">
+    <h2>Our Thoughts</h2>
+    <div class="blog-entry">
+      <article class="list-article clearfix">
+        <div class="list-article-thumb">
+          <a href="https://www.nourishingfoodmarketing.com/2020/04/27/the-definitive-guide-to-creating-a-marketing-plan-for-food-and-beverage-brands/">
+            <img src="https://i0.wp.com/www.nourishingfoodmarketing.com/wp-content/uploads/2020/04/Marketing-Funnel-Featured-Image-1.png?resize=300%2C150&ssl=1" alt="marketing funnel definitive guide to creating a marketing plan food beverage cpg brands" />
+          </a>
+        </div>
+        <div class="list-article-content">
+          <header class="entry-header">
+            <h2 class="entry-title"><a href="https://www.nourishingfoodmarketing.com/2020/04/27/the-definitive-guide-to-creating-a-marketing-plan-for-food-and-beverage-brands/" rel="bookmark">The Definitive Guide to Creating a Marketing Strategy for Food and Beverage Brands</a></h2>
+          </header>
+          <div class="entry-excerpt">
+            <p>This is a comprehensive guide for building a Marketing Strategy for food and beverage Consumer Packaged Goods (CPG) companies. I'll take you through a step-by-step framework to walk you through …</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="list-article clearfix">
+        <div class="list-article-thumb">
+          <a href="https://www.nourishingfoodmarketing.com/2022/03/22/5-lessons-on-how-to-drive-grocery-velocities-for-your-cpg-brand-shopper-marketing/">
+            <img src="https://i0.wp.com/www.nourishingfoodmarketing.com/wp-content/uploads/2020/10/photo-1578916171728-46686eac8d58.jpg?resize=300%2C150&ssl=1" alt="grocery store aisle" />
+          </a>
+        </div>
+        <div class="list-article-content">
+          <header class="entry-header">
+            <h2 class="entry-title"><a href="https://www.nourishingfoodmarketing.com/2022/03/22/5-lessons-on-how-to-drive-grocery-velocities-for-your-cpg-brand-shopper-marketing/" rel="bookmark">5 Lessons on How to Drive Grocery Velocities for your CPG Brand (Big or Small) with Shopper Marketing</a></h2>
+          </header>
+          <div class="entry-excerpt">
+            <p>Walk-through how to think about your sales and marketing support for in-store distribution of food and beverage brands.</p>
+          </div>
+        </div>
+      </article>
+
+      <div class="all-news">
+        <a class="btn btn-theme-primary-outline" href="https://www.nourishingfoodmarketing.com/food-brands-blog/">Read Our Blog</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter Section -->
+<section class="section-newsletter">
+  <div class="container">
+    <div id="fd-form-5fadd2dd76d8d6c0f4cf191d"></div>
+    <script>
+      window.fd('form', {
+        formId: '5fadd2dd76d8d6c0f4cf191d',
+        containerEl: '#fd-form-5fadd2dd76d8d6c0f4cf191d'
+      });
+    </script>
   </div>
 </section>
 

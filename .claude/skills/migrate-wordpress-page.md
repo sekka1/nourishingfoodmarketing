@@ -232,7 +232,103 @@ This migration successfully:
 7. Projects - "Selected Work" (with subtitle "Click on a project to learn more")
 8. Testimonials - "Testimonials" (3 testimonial cards)
 9. Contact - "Get in Touch"
-10. Blog - (section exists but may not render content)
+10. Blog - "Our Thoughts" (section with 2 blog post previews and "Read Our Blog" button)
+11. Newsletter - "SUBSCRIBE TO MY NEWSLETTER!" (Flodesk form integration)
+
+### Lessons Learned: Why Sections Were Initially Missed
+
+**Blog Section ("Our Thoughts"):**
+- The section exists in the HTML with `id="blog"`
+- Initially treated as a placeholder without extracting actual content
+- **Lesson:** Always extract the FULL section content, not just the section ID. Use `sed -n "/<section id=\"blog\"/,/<\/section>/p"` to get ALL the HTML
+- The section contains 2 blog post previews with images, titles, excerpts, and a "Read Our Blog" button
+- All blog post images are external WordPress URLs - these should be kept as-is (linking to live blog)
+
+**Newsletter Section:**
+- This section does NOT have a `<section id="">` tag and won't appear in section ID searches
+- Located AFTER the `</footer>` tag in the original HTML
+- It's a Flodesk form integration with a specific form ID: `5fadd2dd76d8d6c0f4cf191d`
+- **Lesson:** After extracting all sections, search for additional content between footer and end of body: `sed -n '/<\/footer>/,/<\/body>/p'`
+- Newsletter forms and third-party integrations may be inserted outside the main section structure
+
+**Prevention Strategy:**
+1. Extract ALL sections by ID using grep
+2. Extract ALL content between sections to catch non-section elements
+3. Extract everything after footer but before body close
+4. Manually review original page to verify visual completeness
+5. Count sections visually on original page and compare to extracted count
+
+### Mobile-Friendly Design Requirements
+
+This site must be fully responsive and mobile-friendly. All migrations must include:
+
+**Mobile Breakpoint:**
+- Primary breakpoint: `@media (max-width: 768px)`
+- Mobile devices should show single-column layouts
+- Touch targets should be at least 44x44px
+
+**Layout Adjustments for Mobile:**
+```css
+@media (max-width: 768px) {
+  /* Hero sections */
+  .hero-section h1 { font-size: 32px; }
+  .hero-section h3 { font-size: 18px; }
+
+  /* Services grid - 2x2 on desktop, 1 column on mobile */
+  .services-grid { grid-template-columns: 1fr; }
+
+  /* Projects grid */
+  .projects-grid { grid-template-columns: 1fr; }
+
+  /* Founder content - stack vertically */
+  .founder-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* CTA sections */
+  .section-cta .row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* Blog posts - stack vertically */
+  .list-article {
+    flex-direction: column;
+  }
+
+  .list-article-thumb {
+    width: 100%;
+  }
+
+  /* Contact form images */
+  .section-contact .contact-form img {
+    float: none;
+    margin: 0 auto;
+    display: block;
+  }
+}
+```
+
+**Grid Layouts:**
+- Services section: 2x2 grid on desktop (`grid-template-columns: repeat(2, 1fr)`), 1 column on mobile
+- Projects section: Auto-fit grid on desktop, 1 column on mobile
+- Testimonials: Auto-fit grid on desktop, 1 column on mobile
+
+**Sticky Header:**
+- Header should be sticky on scroll for better navigation
+- Add to all migrated pages:
+```css
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+```
 
 ## Usage
 

@@ -131,12 +131,91 @@ The home page (`_layouts/home.html`) is a complete migration from WordPress with
 2. About - Introduction with client logos
 3. Founder - "Meet Our Founder" (Christie Lee)
 4. Approach - "We Get More Done With Less!"
-5. Services - "How We Can Help" (4 service cards)
+5. Services - "How We Can Help" (4 service cards in 2x2 grid)
 6. CTA - "Download my FREE 12-page guide..."
 7. Projects - "Selected Work" (3 project showcases)
 8. Testimonials - 3 testimonial cards
 9. Contact - "Get in Touch"
-10. Blog - Section placeholder
+10. Blog - "Our Thoughts" (2 blog post previews)
+11. Newsletter - "SUBSCRIBE TO MY NEWSLETTER!" (Flodesk form)
+
+## Mobile-Friendly Design
+
+**This site MUST be fully responsive and mobile-friendly.**
+
+### Responsive Breakpoints
+
+Primary breakpoint: **768px** (`@media (max-width: 768px)`)
+
+All pages must be tested at:
+- Desktop: 1200px+ (full width)
+- Tablet: 768px - 1199px
+- Mobile: < 768px (single column)
+
+### Mobile Layout Requirements
+
+**Grid Layouts:**
+- Services section: 2x2 grid on desktop → 1 column on mobile
+- Projects section: Auto-fit grid on desktop → 1 column on mobile
+- Testimonials: Auto-fit grid on desktop → 1 column on mobile
+- Blog posts: Side-by-side on desktop → stacked on mobile
+
+**Typography Scaling:**
+```css
+@media (max-width: 768px) {
+  .hero-section h1 { font-size: 32px; }  /* from 48px */
+  .hero-section h3 { font-size: 18px; }  /* from 24px */
+  h2 { font-size: 32px; }                /* from 42px */
+}
+```
+
+**Layout Stacking:**
+- Founder section: Image + bio side-by-side → stacked vertically
+- Contact section: Form + info side-by-side → stacked vertically
+- CTA sections: Button + text side-by-side → stacked vertically
+- Blog articles: Thumbnail + content side-by-side → stacked vertically
+
+**Touch Targets:**
+- Minimum 44x44px for all clickable elements
+- Buttons should have padding: 15-18px vertical, 35-40px horizontal
+- Links should have adequate spacing
+
+### Sticky Header
+
+Header must remain visible while scrolling:
+
+```css
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+```
+
+### Services Section Grid
+
+**Desktop (> 768px):** Fixed 2x2 grid
+```css
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+```
+
+**Mobile (≤ 768px):** Single column
+```css
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+```
+
+**Important:** Services should ALWAYS display as 2 columns on desktop, never 4 columns in a single row.
 
 ## Common Tasks
 
@@ -209,10 +288,32 @@ When migrating additional pages from WordPress:
 1. **Review Migration Skill** - Read `.claude/skills/migrate-wordpress-page.md` completely
 2. **Download Original** - Get full HTML from WordPress site
 3. **Extract ALL Sections** - Use grep to find every `<section id=` and extract them all
-4. **Preserve Exact Text** - Copy content verbatim, no changes
-5. **Fix Width** - Add wrapper override for full-width display
-6. **Verify Completeness** - Check every section from original is present
-7. **Update Skill** - Add any new learnings to migration guide
+4. **Check Content After Footer** - Search for content between `</footer>` and `</body>` (forms, scripts)
+5. **Preserve Exact Text** - Copy content verbatim, no changes
+6. **Fix Width** - Add wrapper override for full-width display
+7. **Verify Completeness** - Check every section from original is present
+8. **Update Skill** - Add any new learnings to migration guide
+
+### Common Migration Mistakes to Avoid
+
+**Blog Section Omission:**
+- The "Our Thoughts" section exists with `id="blog"` but was initially treated as a placeholder
+- **Solution:** Always extract FULL section content using `sed -n "/<section id=\"blog\"/,/<\/section>/p"`
+- Don't assume a section is empty - extract and review the HTML
+
+**Newsletter Section Omission:**
+- Newsletter form does NOT have a `<section id="">` tag and won't appear in section searches
+- Located AFTER the `</footer>` tag in the original HTML
+- **Solution:** Search for content after footer: `sed -n '/<\/footer>/,/<\/body>/p'`
+- Third-party integrations (Flodesk, Mailchimp) may be outside main section structure
+
+**Prevention Checklist:**
+- [ ] Extract all sections by ID
+- [ ] Extract content between sections
+- [ ] Extract content after footer
+- [ ] Count sections visually on original page
+- [ ] Compare extracted count to visual count
+- [ ] Review each section for actual content (not just ID)
 
 ## Important Notes
 
