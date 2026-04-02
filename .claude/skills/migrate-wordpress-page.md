@@ -102,6 +102,40 @@ The default Jekyll layout wraps content in a `.wrapper` div with max-width const
 }
 ```
 
+**IMPORTANT: Fix Header Width and Logo**
+The default Jekyll header also uses a `.wrapper` div that constrains width. To match the original WordPress site:
+
+1. **Header Full Width:** Add custom CSS to override the header wrapper:
+```css
+.site-header .header-wrapper {
+  max-width: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+```
+
+2. **Replace Text with Logo:** Edit `_includes/header.html` to replace the text site title with logo image:
+```html
+<!-- Before (text title) -->
+<a class="site-title" rel="author" href="{{ "/" | relative_url }}">
+  {{ site.title | escape }}
+</a>
+
+<!-- After (logo image) -->
+<a class="site-title" rel="author" href="{{ "/" | relative_url }}">
+  <img src="{{ '/assets/images/Primary-Logo.png' | relative_url }}" alt="{{ site.title | escape }}" class="site-logo" />
+</a>
+```
+
+3. **Logo Styling:** Add CSS for the logo:
+```css
+.site-header .site-logo {
+  max-height: 50px;
+  width: auto;
+  display: block;
+}
+```
+
 **Inline Styles:**
 - Copy critical CSS from the original page
 - Convert WordPress image URLs to Jekyll asset paths: `{{ '/assets/images/[IMAGE]' | relative_url }}`
@@ -250,6 +284,14 @@ This migration successfully:
 - It's a Flodesk form integration with a specific form ID: `5fadd2dd76d8d6c0f4cf191d`
 - **Lesson:** After extracting all sections, search for additional content between footer and end of body: `sed -n '/<\/footer>/,/<\/body>/p'`
 - Newsletter forms and third-party integrations may be inserted outside the main section structure
+- **CRITICAL:** Flodesk forms require the Flodesk universal script to be loaded in the `<head>`. Without this script, the form HTML will be present but won't render. Extract the Flodesk script from original page header:
+  ```bash
+  grep -o '<script>.*FlodeskObject.*</script>' /tmp/original.html
+  ```
+  Add this script to `_includes/head.html` before the closing `</head>` tag:
+  ```html
+  <script>(function(w,d,t,s,n){w.FlodeskObject=n;var fn=function(){(w[n].q=w[n].q||[]).push(arguments);};w[n]=w[n]||fn;var f=d.getElementsByTagName(t)[0];var e=d.createElement(t);var h='?v='+new Date().getTime();e.async=true;e.src=s+h;f.parentNode.insertBefore(e,f);})(window,document,'script','https://assets.flodesk.com/universal.js','fd');</script>
+  ```
 
 **Prevention Strategy:**
 1. Extract ALL sections by ID using grep
