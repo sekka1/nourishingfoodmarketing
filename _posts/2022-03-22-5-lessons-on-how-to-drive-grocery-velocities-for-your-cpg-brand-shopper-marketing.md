@@ -53,7 +53,7 @@ image: /assets/images/blog/lona-0BaEdsR8IRY-unsplash.jpg
 <p><span style="font-weight: 400; font-size: 18px;">Concretely, here are some tactics to consider at each stage of the funnel:</span></p>
 <img alt="Consumer Marketing Funnel Featured Image Logo" class="fl-photo-img wp-image-2159 jetpack-lazy-image post-content-image" height="369" itemprop="image" src="{{ '/assets/images/blog/Marketing-Funnel-Featured-Image-Logo.png' | relative_url }}" title="Marketing Funnel Featured Image Logo" width="800"/>
 <p style="text-align: center;"><span style="color: #fbc944;"><strong><span style="font-size: 18px;">Check out my Definitive Guide to Creating a Marketing Plan for Food and Beverage Brands</span></strong></span></p>
-<center><strong><a class="button" href="/2020/04/27/the-definitive-guide-to-creating-a-marketing-plan-for-food-and-beverage-brands/">LET'S GO</a></strong></center>
+<p style="text-align: center;"><strong><a class="button" href="/2020/04/27/the-definitive-guide-to-creating-a-marketing-plan-for-food-and-beverage-brands/">LET'S GO</a></strong></p>
 <a name="silver-bullet"></a>
 <p><a name="prioritizing-tactics"></a></p>
 <h2><span style="font-size: 24px;"><strong>Lesson #3: There is no silver bullet </strong></span></h2>
@@ -69,7 +69,7 @@ image: /assets/images/blog/lona-0BaEdsR8IRY-unsplash.jpg
 <h2><span style="font-size: 24px;"><strong>Lesson #4: Launching a food brand isn’t cheap. Plan your budget and cash flow accordingly. </strong></span></h2>
 <p><span style="font-size: 18px;"><span style="font-weight: 400;">If you have a new brand or product, you should be setting aside 5-20% of your wholesale sales for marketing on top of trade promos for at least the first </span><b><i>and </i></b><span style="font-weight: 400;">second years in business.  If  your product isn’t moving off the shelf, you will lose that shelf space.  You have worked so hard and spent so much to get the shelf space and you don’t want to lose it over poor marketing support.  Plan for this investment in your budget from the very beginning. Distribution is the biggest driver of sales, but this won’t help you if you continually gain and lose distribution because your product isn’t moving off shelves.  Most brands aren’t profitable in the first two years of business - you’re brand building.  </span></span></p>
 <p style="text-align: center;"><span style="color: #fff3e2;"><strong><span style="font-size: 18px;">Download my FREE Guide to Avoiding the Top 3 Marketing Mistakes that food and beverage CPG brands make</span></strong></span></p>
-<center><strong><a class="button" href="/marketing-consultant/download-avoid-top-3-marketing-mistakes-guide/">TELL ME MORE</a></strong></center>
+<p style="text-align: center;"><strong><a class="button" href="/marketing-consultant/download-avoid-top-3-marketing-mistakes-guide/">TELL ME MORE</a></strong></p>
 <a name="marketing-fundamentals"></a>
 <p><a name="prioritizing-tactics"></a></p>
 <h2><span style="font-size: 24px;"><strong>Lesson #5: </strong><strong>Marketing fundamentals are KEY</strong></span></h2>
