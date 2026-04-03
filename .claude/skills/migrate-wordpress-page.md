@@ -164,7 +164,47 @@ Replace all external URLs with local Jekyll paths:
 <img src="{{ '/assets/images/Circle-Variation-grey.png' | relative_url }}" alt="Logo">
 ```
 
-### 8. Test Migration
+### 8. Fix All Internal Links
+
+**CRITICAL:** Every internal link must use the `relative_url` filter. Never hardcode paths like `/blog/` — they will break when the site is deployed under a `baseurl` (e.g., `/nourishingfoodmarketing`).
+
+**Before (broken):**
+```html
+<a href="/blog/">Blog</a>
+<a href="/about">About</a>
+```
+
+**After (correct):**
+```html
+<a href="{{ '/blog/' | relative_url }}">Blog</a>
+<a href="{{ '/about' | relative_url }}">About</a>
+```
+
+Apply to **all** internal links, including:
+- Navigation links in `_includes/header.html`
+- "Read Our Blog", "Learn More", and other CTA buttons
+- Blog post links in the home page "Our Thoughts" section
+- "View All" and pagination links in post/blog layouts
+- Any page links within content sections
+
+### 9. Post-Migration Link Check
+
+After migrating a page, scan for any remaining external links or hardcoded internal paths:
+
+```bash
+# Check for links still pointing to the original WordPress domain
+grep -n "href=\"https://www.nourishingfoodmarketing.com" _layouts/[PAGE].html
+
+# Check for hardcoded internal paths missing relative_url
+grep -n 'href="/' _layouts/[PAGE].html | grep -v "relative_url"
+
+# Check for images still pointing to WordPress wp-content
+grep -n "wp-content" _layouts/[PAGE].html
+```
+
+Fix any matches: replace `href="https://www.nourishingfoodmarketing.com/some-page/"` with the equivalent `href="{{ '/some-page/' | relative_url }}"` (or the local migrated path).
+
+### 10. Test Migration
 
 ```bash
 # Build the site
@@ -174,7 +214,28 @@ bundle exec jekyll build
 bundle exec jekyll serve
 ```
 
-### 9. Visual Comparison Checklist
+### 11. Link Validation After Build
+
+After the site builds, validate links with `htmlproofer` (if available):
+
+```bash
+bundle exec htmlproofer _site --disable-external --check-html
+```
+
+Without htmlproofer, manually test these critical links:
+1. Open every page in the browser (local or deployed)
+2. Click every navigation link in the header
+3. Click every CTA button and blog post link
+4. Verify pages render (not a 404)
+
+**Common dead-link patterns to check:**
+- Navigation links in the header (must all use `relative_url`)
+- Blog post thumbnail/title links on the home page
+- "Read Our Blog" / "Read More" CTA buttons
+- "View All" link on individual post pages
+- Project / service detail links
+
+### 12. Visual Comparison Checklist
 
 - [ ] Hero section displays correctly with background image
 - [ ] All images load and display at correct sizes
@@ -185,6 +246,8 @@ bundle exec jekyll serve
 - [ ] Responsive design works on mobile (< 768px)
 - [ ] No external dependencies (all assets local)
 - [ ] No broken images or missing CSS
+- [ ] All internal links use `relative_url` filter
+- [ ] No links pointing back to `www.nourishingfoodmarketing.com` (except intentional external links like social media or Tiny Hero)
 
 ## Key Design Elements to Preserve
 
@@ -234,10 +297,13 @@ assets/
 6. **Don't** skip any sections - ALL sections must be migrated
 7. **Don't** rename sections or change copy - use EXACT text from original
 8. **Don't** forget to override the wrapper width constraint for full-width layouts
-9. **Do** preserve responsive breakpoints (typically @media max-width: 768px)
-10. **Do** maintain hover effects and transitions
-11. **Do** keep the visual hierarchy and spacing
-12. **Do** verify ALL sections are present before considering migration complete
+9. **Don't** hardcode internal paths (e.g., `href="/blog/"`) — always use `{{ '/blog/' | relative_url }}`
+10. **Don't** leave links pointing back to `www.nourishingfoodmarketing.com` for pages that have been migrated locally
+11. **Do** preserve responsive breakpoints (typically @media max-width: 768px)
+12. **Do** maintain hover effects and transitions
+13. **Do** keep the visual hierarchy and spacing
+14. **Do** verify ALL sections are present before considering migration complete
+15. **Do** run the post-migration link check (Step 9) on every migrated page
 
 ## Example Migration: Home Page
 
@@ -382,11 +448,51 @@ To migrate a new page:
 4. Create/update corresponding Markdown file (e.g., `about.md`)
 5. Update front matter to use new layout
 6. Test visually against original
-7. Commit and push to GitHub Pages
+7. Run post-migration link check (Step 9) — fix any dead links before committing
+8. Commit and push to GitHub Pages
 
 ## Notes
 
 - GitHub Pages automatically builds Jekyll sites on push
 - No need to commit `_site/` directory (it's in .gitignore)
-- Use `{{ relative_url }}` filter for all internal links and assets
+- Use `{{ '/path/' | relative_url }}` filter for **all** internal links and assets — never hardcode paths
 - The site uses the Minima theme as a base but heavily customizes it
+
+## Link Testing for this Jekyll Site
+
+Jekyll is a static site generator — there is no built-in automated link checker. Available options:
+
+### Option 1: htmlproofer gem (recommended for CI)
+
+Add to `Gemfile`:
+```ruby
+gem 'html-proofer'
+```
+
+Run after build:
+```bash
+bundle exec jekyll build
+bundle exec htmlproofer _site \
+  --disable-external \
+  --ignore-urls "/mailto:/" \
+  --check-html
+```
+
+This checks every link in the built HTML files, ensuring no 404s within the site.
+
+### Option 2: Manual grep before committing
+
+Quick sanity check after any migration:
+```bash
+# Find links still pointing to original WordPress domain for migrated pages
+grep -rn "href=\"https://www.nourishingfoodmarketing.com" _layouts/ _includes/ _posts/
+
+# Find hardcoded internal paths (missing relative_url)
+grep -rn 'href="/' _layouts/ _includes/ | grep -v "relative_url" | grep -v "<!--"
+```
+
+### What Cannot Be Automated
+
+- Third-party external links (Tiny Hero, social media) — these are intentional
+- `mailto:` links
+- Links inside comments
