@@ -152,7 +152,7 @@ layout: default
 
 <section class="blog-index-section">
   <div class="container">
-    {% for post in paginator.posts %}
+    {% for post in site.posts %}
     <article class="blog-list-article">
       {% if post.image %}
       <div class="blog-list-thumb">
@@ -171,27 +171,5 @@ layout: default
       </div>
     </article>
     {% endfor %}
-
-    {% if paginator.total_pages > 1 %}
-    <div class="blog-pagination">
-      {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path | relative_url }}">&larr; Newer</a>
-      {% endif %}
-
-      {% for page in (1..paginator.total_pages) %}
-        {% if page == paginator.page %}
-          <span class="current">{{ page }}</span>
-        {% elsif page == 1 %}
-          <a href="{{ '/blog/' | relative_url }}">{{ page }}</a>
-        {% else %}
-          <a href="{{ site.paginate_path | replace: ':num', page | relative_url }}">{{ page }}</a>
-        {% endif %}
-      {% endfor %}
-
-      {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path | relative_url }}">Older &rarr;</a>
-      {% endif %}
-    </div>
-    {% endif %}
   </div>
 </section>
