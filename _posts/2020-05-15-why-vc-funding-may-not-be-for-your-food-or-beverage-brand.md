@@ -55,7 +55,7 @@ image: /assets/images/blog/money2-scaled.jpg
 <li><span style="font-size: 18px;">you are building a new category and must do a lot of consumer education (eg, Perfect Bar)</span></li>
 </ul>
 <p style="text-align: center;"><span style="color: #fbc944;"><strong><span style="font-size: 18px;">Check out my Definitive Guide to Creating a Marketing Plan for Food Brands</span></strong></span></p>
-<center><strong><a class="button" href="2020/04/27/the-definitive-guide-to-creating-a-marketing-plan-for-food-and-beverage-brands/">LET'S GO</a></strong></center>
+<center><strong><a class="button" href="/2020/04/27/the-definitive-guide-to-creating-a-marketing-plan-for-food-and-beverage-brands/">LET'S GO</a></strong></center>
 <p><a name="friends-family"></a></p>
 <h2><span style="font-size: 28px;"><strong>Option 2: Patient Friends &amp; Family Funding</strong></span></h2>
 <p><span style="font-size: 18px;">You can also raise money from friends and family, angel investors, or crowdsourcing (eg, Kickstarter) to get the cash you need to run your business. Money from these sources is typically much more patient with fewer expectations. They expect free product, quarterly updates, and a payout when you make it big.</span></p>

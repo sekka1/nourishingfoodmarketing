@@ -9,4 +9,7 @@ image: /assets/images/blog/Ecommerce-Analysis-Amazon-Walmart-DTC-Social-Nourishi
 ---
 <img src="{{ '/assets/images/blog/Ecommerce-Analysis-Amazon-Walmart-DTC-Social-Nourishing-Food-Marketing.png' | relative_url }}" alt="Getting Started with Ecommerce for Food & Beverage Brands" class="post-featured-image" />
 
-<p><center><div class="ead-preview"><div class="ead-document" style="position: relative;"><iframe class="ead-iframe" src="//view.officeapps.live.com/op/embed.aspx?src=http%3A%2F%2Fwww.nourishingfoodmarketing.com%2Fwp-content%2Fuploads%2F2020%2F06%2FNourishing-Food-Marketing-Ecommerce-SlideShare-1.pptx" style="width: 75%;height: 75%;border: none;min-height: 500px;" title="Embedded Document"></iframe></div></div></center></p>
+<div class="post-presentation">
+<iframe src="https://view.officeapps.live.com/op/embed.aspx?src={{ site.url }}{{ site.baseurl }}/assets/files/Nourishing-Food-Marketing-Ecommerce-SlideShare-1.pptx" style="width: 100%; min-height: 500px; border: none;" title="Ecommerce for Food &amp; Beverage Brands - Slide Presentation"></iframe>
+<p><a href="{{ '/assets/files/Nourishing-Food-Marketing-Ecommerce-SlideShare-1.pptx' | relative_url }}" download>Download the presentation (PPTX)</a></p>
+</div>

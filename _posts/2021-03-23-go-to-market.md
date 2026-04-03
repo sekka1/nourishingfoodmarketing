@@ -123,7 +123,7 @@ With that lens, we’ll explore the strengths and weaknesses of the three sales 
 <p><span style="font-weight: 400;">So, when does it make sense to go DTC? When you’ve got the funding to pay for digital marketing or you’re ready to get scrappy and creative to let consumers know about your brand! (Of course, you also have to consider your product category and if the value to weight ratio works for shipping your products.)</span><br/>
 <a name="natural"></a></p>
 <p style="text-align: center;"><span style="color: #fff3e2;"><strong><span style="font-size: 18px;">Check out my Definitive Guide to Creating a Marketing Plan for Food and Beverage Brands</span></strong></span></p>
-<center><strong><a class="button" href="2020/04/27/the-definitive-guide-to-creating-a-marketing-plan-for-food-and-beverage-brands/">LET'S GO</a></strong></center>
+<center><strong><a class="button" href="/2020/04/27/the-definitive-guide-to-creating-a-marketing-plan-for-food-and-beverage-brands/">LET'S GO</a></strong></center>
 <h3 class="fl-heading">
 <span class="fl-heading-text">National Retailers </span>
 </h3>
