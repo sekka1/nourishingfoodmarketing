@@ -6,3 +6,7 @@ gemspec
 gem 'github-pages'
 gem 'jekyll-paginate-v2'
 gem 'jekyll-sitemap'
+
+group :test do
+  gem 'html-proofer'
+end

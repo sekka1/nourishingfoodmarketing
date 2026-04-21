@@ -1,0 +1,39 @@
+name: Test Pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      - name: Build Jekyll site
+        env:
+          JEKYLL_ENV: test
+        run: bundle exec jekyll build
+
+      - name: Run HTMLProofer
+        run: |
+          bundle exec htmlproofer \
+            --disable-external \
+            --allow-hash-href \
+            _site/nourishingfoodmarketing/index.html \
+            _site/nourishingfoodmarketing/about/index.html \
+            _site/nourishingfoodmarketing/services/index.html \
+            _site/nourishingfoodmarketing/blog/index.html \
+            _site/nourishingfoodmarketing/contact/index.html

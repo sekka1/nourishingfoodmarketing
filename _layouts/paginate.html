@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+<div class="page-content">
+  <div class="wrapper">
+    <h1 class="page-heading">{{ page.title }}</h1>
+
+    <ul class="post-list">
+      {%- for post in paginator.posts -%}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <h2>
+          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        </h2>
+        {%- if post.excerpt -%}
+          <p>{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
+        {%- endif -%}
+        <a href="{{ post.url | relative_url }}">Read more &rarr;</a>
+      </li>
+      {%- endfor -%}
+    </ul>
+
+    <div class="pagination">
+      {%- if paginator.previous_page -%}
+        <a class="pagination-item older" href="{{ paginator.previous_page_path | relative_url }}">&laquo; Newer</a>
+      {%- else -%}
+        <span class="pagination-item older disabled">&laquo; Newer</span>
+      {%- endif -%}
+
+      <span class="pagination-item page-count">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+
+      {%- if paginator.next_page -%}
+        <a class="pagination-item newer" href="{{ paginator.next_page_path | relative_url }}">Older &raquo;</a>
+      {%- else -%}
+        <span class="pagination-item newer disabled">Older &raquo;</span>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
