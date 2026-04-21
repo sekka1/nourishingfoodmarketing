@@ -71,4 +71,4 @@ When choosing the right marketing tactics to drive velocities, you’ll first wa
 </ol>
 <p>As I mentioned above, your marketing tactics should support your marketing objectives and business objectives. It is critical that you define these before moving forward with any marketing tactic. As you A/B test various marketing tactics before determining which ones to invest in, make sure you’re tracking your results and understanding what they mean for your bottom line - you want to understand what you’re getting for your money!</p>
 <p style="text-align: center;"><span style="color: #fff3e2;"><strong><span style="font-size: 18px;">Download my FREE Guide to Avoiding the Top 3 Marketing Mistakes that food and beverage CPG brands make</span></strong></span></p>
-<center><strong><a class="button" href="/marketing-consultant/download-avoid-top-3-marketing-mistakes-guide/">TELL ME MORE</a></strong></center>
+<center><strong><a class="button" href="{{ '/contact/' | relative_url }}">TELL ME MORE</a></strong></center>

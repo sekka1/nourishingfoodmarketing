@@ -21,7 +21,7 @@ image: /assets/images/blog/Marketing-Funnel-Featured-Image-Logo.png
 <li><span style="font-size: 18px;"><a href="#marketing-strategy-purpose"><span style="font-size: 18px;">What is a Marketing Strategy and Why Do I Need to Make One?</span></a></span>
 <ul>
 <li><span style="font-size: 16px;"><a href="#define-marketing-strategy">What a Marketing Strategy Is and Is Not</a></span></li>
-<li><a href="#why-marketing-strategy"><span style="font-size: 16px;">Why You Need a Marketing Strategy</span></a></li>
+<li><a href="#marketing-strategy-purpose"><span style="font-size: 16px;">Why You Need a Marketing Strategy</span></a></li>
 </ul>
 </li>
 <li><span style="font-size: 18px;"><a href="#business-objectives">Step One: Start with Your Business Objectives and Key Results</a></span>
@@ -57,7 +57,7 @@ image: /assets/images/blog/Marketing-Funnel-Featured-Image-Logo.png
 <p>When your consumer buys and tries your product. Once your target consumer is aware of your brand, it typically takes 5-7 experiences with your brand (eg, advertising, great social media content, seeing your product on-shelf) before they'll buy your product. It's just like getting kids to eat vegetables! The end goal of your consumer trying your product is for it to be SO delicious that your new consumer keeps coming back for more and becomes a life-long consumer.</p>
 <p style="text-align: center;"><span style="color: #fbc944;"><strong><span style="font-size: 18px;">Get my FREE Guide to Avoiding the Top 3 Marketing Mistakes<br/>
 that Food and Beverage CPG Brands Make</span></strong></span></p>
-<center><strong><a class="button" href="/marketing-consultant/download-avoid-top-3-marketing-mistakes-guide/">TELL ME MORE</a></strong></center>
+<center><strong><a class="button" href="{{ '/contact/' | relative_url }}">TELL ME MORE</a></strong></center>
 <a name="business-objectives"></a>
 <h2>Step One: Start with your Business Objectives and Key Results</h2>
 <p><span style="font-size: 18px;"> The first step in building a kickass Marketing Strategy is writing down your business objectives and key results. Your marketing strategy needs to contribute to these business objectives - after all, why else are you marketing your brand?</span></p>
@@ -163,7 +163,7 @@ that Food and Beverage CPG Brands Make</span></strong></span></p>
 <li><span style="font-size: 18px;">Use industry benchmarks to analyze how you're doing compared to other food and beverage brands</span></li>
 </ul>
 <p style="text-align: center;"><span style="font-size: 18px; color: #fbc944;"><strong>Need help creating an effective and efficient Marketing Strategy? Work with me 1-on-1 to create a thought-through plan that you can't wait to execute on!</strong></span></p>
-<center><strong><a class="button" href="/marketing-consultant/marketing-strategy-for-food-brands/">LEARN MORE</a></strong></center>
+<center><strong><a class="button" href="{{ '/services/' | relative_url }}">LEARN MORE</a></strong></center>
 <a name="execute-test-learn"></a>
 <h2>Step Four: Execution, Testing, and Learning</h2>
 <p><span style="font-size: 18px;">Hooray, give yourself a pat on the back - it's a lot of work to put a Marketing Strategy together! It's so worth it to have a clear, focused approach to your marketing efforts. </span><span style="font-size: 18px;">Now, you have to put this glorious plan into action. Here are a few parting thoughts to help set you up for success:</span></p>
@@ -175,10 +175,10 @@ that Food and Beverage CPG Brands Make</span></strong></span></p>
 <p><span style="font-size: 18px;">I think marketing is just like roulette. You can build your brand using one well-performing tactic. Impossible built their brand on PR, Dirty Lemon built their brand on digital advertising through social media, KIND built their brand on in-person guerilla sampling, and RightRice built their brand on influencer partnerships. Now, you just need to figure out what works for your brand and continue doing more of these tactics.</span></p>
 <img alt="marketing is like roulette" class="fl-photo-img wp-image-2160 jetpack-lazy-image post-content-image" height="540" itemprop="image" src="{{ '/assets/images/blog/roulette-1.png' | relative_url }}" title="roulette" width="540"/>
 <p style="text-align: center;"><span style="font-size: 18px;"><strong> Check out more of our Actionable Blog Posts for Food and Beverage CPGs</strong></span></p>
-<center><strong><a class="button" href="/food-brands-blog/">Read More</a></strong></center>
+<center><strong><a class="button" href="{{ '/blog/' | relative_url }}">Read More</a></strong></center>
 <p><a name="contact"></a></p>
 <p style="text-align: center;"><span style="font-size: 20px;">Thanks so much for reading my Definitive Guide to Creating a Marketing Strategy for Food and Beverage Brands! If you've read all the way down here, you're thinking about your Marketing Strategy deeply.</span></p>
 <p><span class="emoji" style="font-size: 18px;">Let's build your Marketing Strategy together:</span></p>
 <p><span class="emoji" style="font-size: 18px;"> Expert guidance from a former food founder and Big Food brand marketer that has worked with 12+ emerging CPG brands</span></p>
 <p><span class="emoji" style="font-size: 18px;"> Proven framework for getting clear on your Marketing Objectives and growing your business</span></p>
-<center><strong><a class="button" href="/marketing-consultant/marketing-strategy-for-food-brands/">LEARN MORE</a></strong></center>
+<center><strong><a class="button" href="{{ '/services/' | relative_url }}">LEARN MORE</a></strong></center>

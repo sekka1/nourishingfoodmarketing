@@ -179,7 +179,7 @@ With that lens, we’ll explore the strengths and weaknesses of the three sales 
 <p><a name="comparing-channels"></a>
 </p></ul>
 <p style="text-align: center;"><span style="color: #fff3e2;"><strong><span style="font-size: 18px;">Download my FREE Guide to Avoiding the Top 3 Marketing Mistakes that food and beverage CPG brands make</span></strong></span></p>
-<center><strong><a class="button" href="/marketing-consultant/download-avoid-top-3-marketing-mistakes-guide/">TELL ME MORE</a></strong></center>
+<center><strong><a class="button" href="{{ '/contact/' | relative_url }}">TELL ME MORE</a></strong></center>
 <h3 class="fl-heading">
 <span class="fl-heading-text">Comparing these Channels</span>
 </h3>

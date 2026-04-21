@@ -61,7 +61,7 @@ image: /assets/images/blog/photo-1578916171728-46686eac8d58.jpg
 <li><span style="font-size: 18px;">Measure how much it costs you to sample your product via a consumer sampling program like PinchMe and a retailer e-sampling program (drive trial)</span></li>
 </ul>
 <p><span style="font-size: 18px;">As you decide how much to allocate to your sales and marketing budgets, first decide on your business objectives and  your sales and marketing objectives. Then, look to your past tactic performance and industry benchmarks to figure out how you should best spend your dollars (and don't forget to ask your fellow founders on groups like <a href="https://www.facebook.com/groups/omgcpg/">OMGCPG</a> or <a href="https://startupcpg.com/">StartUpCPG</a>!).</span></p>
-<p><a name="institutional-funding"></a></p>
+<p><a name="institutional-funding"></a><a name="top-considerations"></a></p>
 <h2><span style="font-size: 28px;"><strong>Top 6 Considerations When Developing Your Support Plan</strong></span></h2>
 <p><span style="font-weight: 400; font-size: 18px;">In addition to the factors we mentioned above, there are strategic differences between sales and marketing tactics that are important to consider. </span></p>
 <ul>
@@ -77,7 +77,7 @@ image: /assets/images/blog/photo-1578916171728-46686eac8d58.jpg
 </li>
 </ul>
 <p style="text-align: center;"><span style="color: #fff3e2;"><strong><span style="font-size: 18px;">Download my FREE Guide to Avoiding the Top 3 Marketing Mistakes that food and beverage CPG brands make</span></strong></span></p>
-<center><strong><a class="button" href="/marketing-consultant/download-avoid-top-3-marketing-mistakes-guide/">TELL ME MORE</a></strong></center>
+<center><strong><a class="button" href="{{ '/contact/' | relative_url }}">TELL ME MORE</a></strong></center>
 <p><a name="final-thoughts"></a></p>
 <h2><span style="font-size: 28px;"><strong>Final Thoughts</strong></span></h2>
 <p><span style="font-weight: 400; font-size: 18px;">As you develop your 2021 sales and marketing plan, know that it’s not set in stone. It should change as you get new information: how your sales are doing in year two of a global pandemic, performance results of your tactics, and new opportunities. You’ll need to demonstrate to retailers that you will support your product through sales and marketing support but how you do it is up to you.</span></p>

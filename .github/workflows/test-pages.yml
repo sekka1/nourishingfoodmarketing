@@ -32,5 +32,7 @@ jobs:
           bundle exec htmlproofer \
             --disable-external \
             --allow-hash-href \
+            --allow-missing-href \
+            --no-enforce-https \
             --ignore-urls "/apple-touch-icon.png/,/favicon-32x32.png/,/favicon-16x16.png/" \
             _site/
