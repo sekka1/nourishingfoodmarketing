@@ -356,6 +356,74 @@ title: Home
   text-transform: none;
 }
 
+.project-item {
+  cursor: pointer;
+}
+
+/* Shared project details block that appears below all projects */
+.project-details-block {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+  background: #f8f9fa;
+  margin-top: 40px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.project-details-block.expanded {
+  max-height: 1000px;
+  transition: max-height 0.6s ease-in;
+}
+
+.project-details-block .project-details-content {
+  padding: 40px 60px 40px 40px;
+}
+
+.project-details-block .project-details-content h5 {
+  font-size: 24px;
+  color: #435159;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.project-details-block .project-details-content p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #435159;
+  margin: 0;
+}
+
+.project-details-block .close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  font-size: 36px;
+  line-height: 1;
+  color: #435159;
+  cursor: pointer;
+  padding: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s, transform 0.3s;
+  z-index: 10;
+}
+
+.project-details-block .close-button:hover {
+  color: #fab80a;
+  transform: rotate(90deg);
+}
+
+.project-details-block .close-button:focus {
+  outline: 2px solid #fab80a;
+  outline-offset: 2px;
+}
+
 /* Testimonials Section */
 .section-testimonials {
   background-color: #fff3e2;
@@ -641,6 +709,20 @@ title: Home
   .list-article-thumb img {
     width: 100%;
   }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-details-block .project-details-content {
+    padding: 30px 50px 30px 20px;
+  }
+
+  .project-details-block .close-button {
+    top: 15px;
+    right: 15px;
+    font-size: 30px;
+  }
 }
 </style>
 
@@ -758,27 +840,74 @@ title: Home
     <h5 class="section-subtitle">Click on a project to learn more</h5>
     <h2>Selected Work</h2>
     <div class="projects-grid">
-      <div class="project-item">
+      <div class="project-item" onclick="showProjectDetails('project1')">
         <img src="{{ '/assets/images/projects/Olly-Project.png' | relative_url }}" alt="OLLY Project" />
         <div class="project-header">
           <h5 class="project-small-title">Developing Consumer, Customer, and Company Value Propositions for OLLY's New Products</h5>
         </div>
       </div>
-      <div class="project-item">
+      <div class="project-item" onclick="showProjectDetails('project2')">
         <img src="{{ '/assets/images/projects/PetitPot-Project.png' | relative_url }}" alt="Petit Pot Project" />
         <div class="project-header">
           <h5 class="project-small-title">Consumer Insights: Fielding Product Development & Packaging Surveys for Petit Pot</h5>
         </div>
       </div>
-      <div class="project-item">
+      <div class="project-item" onclick="showProjectDetails('project3')">
         <img src="{{ '/assets/images/projects/TinyHero-Project.png' | relative_url }}" alt="Tiny Hero Project" />
         <div class="project-header">
-          <h5 class="project-small-title">Building a Quinoa Brand from Scratch: Tiny Hero Foods</h5>
+          <h5 class="project-small-title">Strategy &amp; Execution of Packaging and Creative Asset Development for Tiny Hero</h5>
         </div>
+      </div>
+    </div>
+
+    <!-- Single shared project details block -->
+    <div id="project-details-block" class="project-details-block">
+      <button class="close-button" onclick="closeProjectDetails()" aria-label="Close project details">&times;</button>
+      <div id="project-details-content" class="project-details-content">
+        <!-- Content will be dynamically inserted here -->
       </div>
     </div>
   </div>
 </section>
+
+<script>
+// Project data
+var projectData = {
+  'project1': {
+    title: 'Developing Consumer, Customer, and Company Value Propositions for OLLY\'s New Products',
+    description: 'OLLY, gummy vitamin makers, was just acquired by Unilever and needed to accelerate its new product development to meet company growth targets. Nourishing Food Marketing led the innovation prioritization process by estimating the Size of Prize of each idea, evaluating product-market fit with OLLY\'s key retailer partners, evaluating the category size & trends, and researching the competitive landscape. For the top ideas, we developed pricing based on consumer willingness to pay and company & retailer margin requirements. Lastly, we developed product positioning, informed by consumer research, competitive offerings, and key purchasing criteria for the category. OLLY received positive buyer feedback about these new product innovations and is on-track to gain distribution at a major national retailer.'
+  },
+  'project2': {
+    title: 'Consumer Insights: Fielding Product Development & Packaging Surveys for Petit Pot',
+    description: 'Petit Pot, a traditional French pudding brand, expanded distribution from natural retailers to mainstream retailers. They needed to understand how to talk about their delicious products to this new group of consumers: what product name and product claims should be on their packaging? Nourishing Food Marketing developed, wrote, programmed, fielded, and analyzed a consumer survey to answer these questions. Petit Pot used these consumer learnings to change their packaging and increase trial of their product on-shelf. Their packaging now clearly highlighted their most consumer relevant product claims, product name, and product description.'
+  },
+  'project3': {
+    title: 'Strategy & Execution of Packaging and Creative Asset Development for Tiny Hero',
+    description: 'Tiny Hero, a new brand of quinoa, needed to develop their product packaging, sell sheets, tradeshow booth, and website in four short months. Nourishing Food Marketing ran several simultaneous Request for Proposals (RFP) to build a 10+ person creative team of freelancers and agencies. We developed Creative Briefs for each asset, outlining the communication hierarchy based on each assets\' target audience. Then, we provided creative direction and project managed all of the assets concurrently. Because of our work, the brand launched at Expo East with a larger-than-life presence because of its great-looking products, collateral, and trade show booth.'
+  }
+};
+
+function showProjectDetails(projectId) {
+  var detailsBlock = document.getElementById('project-details-block');
+  var detailsContent = document.getElementById('project-details-content');
+  var project = projectData[projectId];
+
+  if (project) {
+    detailsContent.innerHTML = '<h5>' + project.title + '</h5><p>' + project.description + '</p>';
+    detailsBlock.classList.add('expanded');
+
+    // Scroll to the details block smoothly
+    setTimeout(function() {
+      detailsBlock.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 100);
+  }
+}
+
+function closeProjectDetails() {
+  var detailsBlock = document.getElementById('project-details-block');
+  detailsBlock.classList.remove('expanded');
+}
+</script>
 
 <!-- Testimonials Section -->
 <section class="section-testimonials">
