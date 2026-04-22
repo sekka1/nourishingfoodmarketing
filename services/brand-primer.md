@@ -21,7 +21,7 @@ permalink: /services/brand-primer/
 
 .service-page p {
   color: #435159;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 1.6;
   margin-bottom: 20px;
 }
@@ -45,10 +45,11 @@ permalink: /services/brand-primer/
 
 .service-page ul li {
   color: #435159;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 1.8;
   padding-left: 30px;
   position: relative;
+  margin-bottom: 10px;
 }
 
 .service-page ul li:before {
@@ -64,7 +65,12 @@ permalink: /services/brand-primer/
   padding: 30px;
   border-radius: 8px;
   margin: 40px 0;
+}
+
+.testimonial p {
   font-style: italic;
+  font-size: 16px;
+  margin-bottom: 15px;
 }
 
 .cta-section {
@@ -77,8 +83,9 @@ permalink: /services/brand-primer/
 
 .cta-section h3 {
   color: #435159;
-  font-size: 26px;
-  margin-bottom: 20px;
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-weight: 700;
 }
 
 .cta-section .price {
@@ -90,19 +97,19 @@ permalink: /services/brand-primer/
 
 .cta-button {
   display: inline-block;
-  background: #435159;
-  color: #fff3e2;
+  background: #e95262;
+  color: #fff;
   padding: 15px 40px;
   text-decoration: none;
   border-radius: 4px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   transition: all 0.3s ease;
 }
 
 .cta-button:hover {
-  background: #e95262;
-  color: #fff;
+  background: #435159;
+  color: #fff3e2;
 }
 
 .benefits-box {
@@ -112,6 +119,64 @@ permalink: /services/brand-primer/
   margin: 30px 0;
 }
 
+.benefits-box h3 {
+  color: #435159;
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.benefits-box ul {
+  margin: 0;
+}
+
+.newsletter-section {
+  background: #435159;
+  padding: 50px 20px;
+  margin: 50px -20px -40px -20px;
+  text-align: center;
+}
+
+.newsletter-section h2 {
+  color: #fff3e2;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.newsletter-form button {
+  background: #fab80a;
+  color: #435159;
+  padding: 15px 35px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background: #e95262;
+  color: #fff;
+}
+
 @media (max-width: 768px) {
   .service-page h1 {
     font-size: 28px;
@@ -119,11 +184,20 @@ permalink: /services/brand-primer/
 
   .service-page p,
   .service-page ul li {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .service-page h2 {
     font-size: 24px;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-form input,
+  .newsletter-form button {
+    width: 100%;
   }
 }
 </style>
@@ -158,7 +232,7 @@ permalink: /services/brand-primer/
   <h2 class="cta"><strong>LET'S GET STARTED! 👇🏼</strong></h2>
 
   <div class="benefits-box">
-    <h3 style="color: #435159; margin-top: 0;">You'll Receive:</h3>
+    <h3>You'll Receive:</h3>
     <ul>
       <li>40+ page editable Brand Primer Template (PowerPoint & PDF)</li>
       <li>Pre-formatted sections with placeholder text and examples</li>
@@ -181,4 +255,13 @@ permalink: /services/brand-primer/
   <div style="text-align: center; margin-top: 40px;">
     <a href="{{ '/services/' | relative_url }}" style="color: #fab80a; font-size: 18px; text-decoration: underline;">← Back to All Services</a>
   </div>
+</div>
+
+<div class="newsletter-section">
+  <h2>SUBSCRIBE TO MY NEWSLETTER!</h2>
+  <form class="newsletter-form" action="https://nourishingfoodmarketing.flodesk.com/subscribe" method="post">
+    <input type="email" name="email" placeholder="Your Email" required />
+    <input type="text" name="first_name" placeholder="First Name" required />
+    <button type="submit">Subscribe</button>
+  </form>
 </div>
