@@ -21,7 +21,16 @@
           <div class="trigger">
             <a class="page-link" href="{{ '/' | relative_url }}">Home</a>
             <a class="page-link" href="{{ '/about/' | relative_url }}">About</a>
-            <a class="page-link" href="{{ '/services/' | relative_url }}">Services</a>
+            <div class="dropdown">
+              <a class="page-link dropdown-toggle" href="{{ '/services/' | relative_url }}">Services</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="{{ '/services/marketing-strategy/' | relative_url }}">Marketing Strategy Creation</a>
+                <a class="dropdown-item" href="{{ '/services/brand-diagnostic/' | relative_url }}">Brand Marketing Diagnostic</a>
+                <a class="dropdown-item" href="{{ '/services/brand-workshop/' | relative_url }}">Brand DNA Workshop</a>
+                <a class="dropdown-item" href="{{ '/services/brand-workbook/' | relative_url }}">Brand DNA Workbook</a>
+                <a class="dropdown-item" href="{{ '/services/brand-primer/' | relative_url }}">Brand Primer Template</a>
+              </div>
+            </div>
             <a class="page-link" href="{{ '/blog/' | relative_url }}">Blog</a>
             <a class="page-link" href="{{ '/contact/' | relative_url }}">Contact</a>
           </div>
