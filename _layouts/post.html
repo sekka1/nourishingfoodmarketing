@@ -37,7 +37,7 @@ layout: default
       {% else %}
         <span class="no-previous"> </span>
       {% endif %}
-      <a class="view-all" href="/blog">View All</a>
+      <a class="view-all" href="{{ '/blog/' | relative_url }}">View All</a>
       {% if page.next.url %}
         <a href="{{ page.next.url }}" class="next">Next > </a>
       {% else %}

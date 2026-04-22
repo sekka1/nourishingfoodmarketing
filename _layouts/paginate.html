@@ -1,40 +1,175 @@
 ---
 layout: default
 ---
+<style>
+.page-content .wrapper {
+  max-width: 100%;
+  padding: 0;
+}
 
-<div class="page-content">
-  <div class="wrapper">
-    <h1 class="page-heading">{{ page.title }}</h1>
+.blog-index-hero {
+  background-color: #435159;
+  color: #fff3e2;
+  padding: 60px 20px;
+  text-align: center;
+}
 
-    <ul class="post-list">
-      {%- for post in paginator.posts -%}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <h2>
-          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-        </h2>
-        {%- if post.excerpt -%}
-          <p>{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
-        {%- endif -%}
-        <a href="{{ post.url | relative_url }}">Read more &rarr;</a>
-      </li>
-      {%- endfor -%}
-    </ul>
+.blog-index-hero h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
 
-    <div class="pagination">
-      {%- if paginator.previous_page -%}
-        <a class="pagination-item older" href="{{ paginator.previous_page_path | relative_url }}">&laquo; Newer</a>
-      {%- else -%}
-        <span class="pagination-item older disabled">&laquo; Newer</span>
-      {%- endif -%}
+.blog-index-section {
+  background-color: #eef0f2;
+  padding: 60px 20px;
+}
 
-      <span class="pagination-item page-count">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+.blog-index-section .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
 
-      {%- if paginator.next_page -%}
-        <a class="pagination-item newer" href="{{ paginator.next_page_path | relative_url }}">Older &raquo;</a>
-      {%- else -%}
-        <span class="pagination-item newer disabled">Older &raquo;</span>
-      {%- endif -%}
-    </div>
-  </div>
+.blog-list-article {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+  align-items: flex-start;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.blog-list-thumb {
+  flex: 0 0 240px;
+}
+
+.blog-list-thumb img {
+  width: 240px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.blog-list-content {
+  flex: 1;
+}
+
+.blog-list-content .post-meta {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.blog-list-content h2 {
+  font-size: 22px;
+  color: #435159;
+  margin-bottom: 10px;
+}
+
+.blog-list-content h2 a {
+  color: #435159;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.blog-list-content h2 a:hover {
+  color: #fab80a;
+}
+
+.blog-list-content .excerpt {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.blog-list-content .read-more {
+  display: inline-block;
+  color: #fab80a;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.blog-list-content .read-more:hover {
+  color: #e95262;
+}
+
+.blog-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.blog-pagination a,
+.blog-pagination span {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.blog-pagination a {
+  background-color: #435159;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+.blog-pagination a:hover {
+  background-color: #fab80a;
+  color: #fff;
+}
+
+.blog-pagination span.current {
+  background-color: #fab80a;
+  color: #fff;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .blog-list-article {
+    flex-direction: column;
+  }
+
+  .blog-list-thumb,
+  .blog-list-thumb img {
+    width: 100%;
+    height: auto;
+  }
+
+  .blog-index-hero h1 {
+    font-size: 30px;
+  }
+}
+</style>
+
+<div class="blog-index-hero">
+  <h1>{{ page.title }}</h1>
 </div>
+
+<section class="blog-index-section">
+  <div class="container">
+    {% for post in site.posts %}
+    <article class="blog-list-article">
+      {% if post.image %}
+      <div class="blog-list-thumb">
+        <a href="{{ post.url | relative_url }}">
+          <img src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}" />
+        </a>
+      </div>
+      {% endif %}
+      <div class="blog-list-content">
+        <p class="post-meta">{{ post.date | date: "%B %-d, %Y" }}</p>
+        <h2><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
+        {% if post.excerpt %}
+        <div class="excerpt">{{ post.excerpt | strip_html | truncatewords: 40 }}</div>
+        {% endif %}
+        <a class="read-more" href="{{ post.url | relative_url }}">Read More &rarr;</a>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
