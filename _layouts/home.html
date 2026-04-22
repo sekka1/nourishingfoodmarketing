@@ -356,6 +356,41 @@ title: Home
   text-transform: none;
 }
 
+.project-item {
+  cursor: pointer;
+}
+
+.project-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+  background: #f8f9fa;
+  margin-top: 0;
+}
+
+.project-details.expanded {
+  max-height: 1000px;
+  transition: max-height 0.5s ease-in;
+}
+
+.project-details-content {
+  padding: 30px;
+}
+
+.project-details-content h5 {
+  font-size: 20px;
+  color: #435159;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.project-details-content p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #435159;
+  margin: 0;
+}
+
 /* Testimonials Section */
 .section-testimonials {
   background-color: #fff3e2;
@@ -641,6 +676,14 @@ title: Home
   .list-article-thumb img {
     width: 100%;
   }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-details-content {
+    padding: 20px;
+  }
 }
 </style>
 
@@ -758,27 +801,62 @@ title: Home
     <h5 class="section-subtitle">Click on a project to learn more</h5>
     <h2>Selected Work</h2>
     <div class="projects-grid">
-      <div class="project-item">
+      <div class="project-item" onclick="toggleProject('project1')">
         <img src="{{ '/assets/images/projects/Olly-Project.png' | relative_url }}" alt="OLLY Project" />
         <div class="project-header">
           <h5 class="project-small-title">Developing Consumer, Customer, and Company Value Propositions for OLLY's New Products</h5>
         </div>
+        <div id="project1" class="project-details">
+          <div class="project-details-content">
+            <h5>Developing Consumer, Customer, and Company Value Propositions for OLLY's New Products</h5>
+            <p>OLLY, gummy vitamin makers, was just acquired by Unilever and needed to accelerate its new product development to meet company growth targets. Nourishing Food Marketing led the innovation prioritization process by estimating the Size of Prize of each idea, evaluating product-market fit with OLLY's key retailer partners, evaluating the category size &amp; trends, and researching the competitive landscape. For the top ideas, we developed pricing based on consumer willingness to pay and company &amp; retailer margin requirements. Lastly, we developed product positioning, informed by consumer research, competitive offerings, and key purchasing criteria for the category. OLLY received positive buyer feedback about these new product innovations and is on-track to gain distribution at a major national retailer.</p>
+          </div>
+        </div>
       </div>
-      <div class="project-item">
+      <div class="project-item" onclick="toggleProject('project2')">
         <img src="{{ '/assets/images/projects/PetitPot-Project.png' | relative_url }}" alt="Petit Pot Project" />
         <div class="project-header">
           <h5 class="project-small-title">Consumer Insights: Fielding Product Development & Packaging Surveys for Petit Pot</h5>
         </div>
+        <div id="project2" class="project-details">
+          <div class="project-details-content">
+            <h5>Consumer Insights: Fielding Product Development & Packaging Surveys for Petit Pot</h5>
+            <p>Petit Pot, premium French-style dessert makers, needed consumer insights to guide their product development and packaging decisions. Nourishing Food Marketing designed and fielded comprehensive surveys to understand consumer preferences, taste profiles, and packaging appeal. We conducted quantitative research with target consumers to evaluate new flavor concepts, portion sizes, and packaging designs. The insights from this research informed Petit Pot's product roadmap and helped them make data-driven decisions about which innovations to prioritize. The research findings led to successful new product launches and improved packaging that resonated with their target audience.</p>
+          </div>
+        </div>
       </div>
-      <div class="project-item">
+      <div class="project-item" onclick="toggleProject('project3')">
         <img src="{{ '/assets/images/projects/TinyHero-Project.png' | relative_url }}" alt="Tiny Hero Project" />
         <div class="project-header">
           <h5 class="project-small-title">Building a Quinoa Brand from Scratch: Tiny Hero Foods</h5>
+        </div>
+        <div id="project3" class="project-details">
+          <div class="project-details-content">
+            <h5>Building a Quinoa Brand from Scratch: Tiny Hero Foods</h5>
+            <p>Tiny Hero Foods was founded by Christie Lee to bring high-quality, organic quinoa products to families. As founder, Christie led all aspects of brand development from concept to market launch. This included developing the brand DNA and positioning, creating the product portfolio, designing packaging and creative assets, and executing the go-to-market strategy. The brand successfully launched in natural and conventional retail channels, establishing strong relationships with key retailers and building a loyal customer base. This hands-on experience in building a food brand from the ground up gives Nourishing Food Marketing unique insights into the challenges and opportunities facing emerging food and beverage brands.</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+function toggleProject(projectId) {
+  var element = document.getElementById(projectId);
+  if (element.classList.contains('expanded')) {
+    element.classList.remove('expanded');
+  } else {
+    // Close all other projects first
+    var allProjects = document.querySelectorAll('.project-details');
+    allProjects.forEach(function(project) {
+      project.classList.remove('expanded');
+    });
+    // Open the clicked project
+    element.classList.add('expanded');
+  }
+}
+</script>
 
 <!-- Testimonials Section -->
 <section class="section-testimonials">
