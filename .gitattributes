@@ -1,0 +1,33 @@
+# Normalize line endings so diffs stop showing whole-file churn.
+# Text/source files are stored as LF in the repo.
+*.scss      text eol=lf
+*.css       text eol=lf
+*.html      text eol=lf
+*.md        text eol=lf
+*.markdown  text eol=lf
+*.yml       text eol=lf
+*.yaml      text eol=lf
+*.js        text eol=lf
+*.json      text eol=lf
+*.xml       text eol=lf
+*.svg       text eol=lf
+*.txt       text eol=lf
+*.sh        text eol=lf
+Gemfile     text eol=lf
+Gemfile.lock text eol=lf
+
+# Windows-only script keeps CRLF
+*.ps1       text eol=crlf
+
+# Binary assets — never normalize
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.webp binary
+*.ico  binary
+*.pptx binary
+*.pdf  binary
+*.woff  binary
+*.woff2 binary
+*.ttf   binary

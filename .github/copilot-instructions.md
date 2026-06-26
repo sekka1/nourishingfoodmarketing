@@ -386,13 +386,13 @@ aborts the **entire** Pages build (symptom: `Invalid CSS after "..."` in the
 correctly and leave NUL padding when shrinking a file — always confirm the file
 is clean after editing SCSS.
 
-**Validate before pushing:** run `./scripts/preflight.sh`. It checks every
+**Validate before pushing:** run `./scripts/preflight.sh` (Git Bash/WSL) or `scripts/preflight.ps1` (PowerShell). It checks every
 `.scss` for control bytes and balanced braces, then runs `jekyll build` and
 `htmlproofer` (mirrors the CI commands).
 
 **CI coverage gap:** `.github/workflows/test-pages.yml` only runs on push/PR to
 `main`, so feature-branch pushes are NOT linted by it — the Pages build is the
-only check that runs on a branch deploy. Run preflight locally on branches.
+only check that runs on a branch deploy. Run preflight locally on branches. A `.gitattributes` normalizes line endings (LF) to prevent whole-file CRLF/LF diff churn.
 
 ## Header navigation (must match the live site)
 
