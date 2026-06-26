@@ -4,7 +4,7 @@ This repository contains the Nourishing Food Marketing website, a static site bu
 
 ## Repository Overview
 
-**Framework:** Jekyll 4.x static site generator
+**Framework:** Jekyll 3.10.x static site generator (pinned via the `github-pages` gem)
 **Theme:** Minima (customized)
 **Deployment:** GitHub Pages
 **Language:** Ruby (Jekyll), HTML, CSS (SCSS), Liquid templating
@@ -66,6 +66,23 @@ Primary color palette (defined in migrated layouts):
 - **Cream:** `#fff3e2` - Light backgrounds, text on dark sections
 - **Light Gray:** `#eef0f2` - Alternating section backgrounds
 - **Coral Pink:** `#e95262` - Hover states
+
+## Typography
+
+Headings and the top navigation use **Libre Baskerville** (serif),
+uppercased with letter-spacing, to match the original OnePress/WordPress
+design. Body copy uses **Roboto** (light, weight 300). These rules live in
+`_sass/minima.scss` (compiled to `assets/main.css`).
+
+- Headings (`h1`-`h6`): Libre Baskerville, color `#333`. `h1`/`h2`/`h3`
+  and the top nav are uppercase with letter-spacing; `h4` (e.g. service-card
+  titles) and blog/post titles stay title-case for readability.
+- Body text: Roboto 300. In-content links: brand gold `#fab80a`.
+- The font is loaded via a Google Fonts `@import` at the top of the
+  typography block in `_sass/minima.scss`.
+
+**Preserve this when migrating new pages** - do not revert headings to the
+default Minima sans-serif.
 
 ## Content Management
 
