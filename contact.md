@@ -6,18 +6,8 @@ permalink: /contact/
 
 # Get in Touch
 
-We'd love to hear from you! Contact us to discuss how we can help your food or nutrition business grow.
+We'd love to hear from you! Set up a free 20 minute consultation to learn more about how we can jump on-board and help you grow your brand.
 
-## Contact Information
-
-**Email:** info@nourishingfoodmarketing.com
-
-**Phone:** [Contact phone number]
-
-## Office Location
-
-[Office address to be added]
-
----
+**Email:** [info@nourishingfoodmarketing.com](mailto:info@nourishingfoodmarketing.com)
 
 For general inquiries, please email us and we'll get back to you within 24 hours.

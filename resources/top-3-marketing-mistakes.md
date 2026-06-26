@@ -18,6 +18,8 @@ permalink: /resources/top-3-marketing-mistakes/
 .resource-cta a:hover { background: #e0a500; transform: translateY(-3px); box-shadow: 0 6px 16px rgba(250,184,10,.4); }
 </style>
 
+<h1 style="text-align:center; margin-bottom:25px;">Avoid the Top 3 Marketing Mistakes</h1>
+
 <p class="resource-lead">You're building your food or beverage business and working furiously to keep all the balls in the air. You're moving fast and wearing a lot of hats.</p>
 
 <div class="resource-intro">
