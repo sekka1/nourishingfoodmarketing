@@ -725,6 +725,66 @@ title: Home
   }
 }
 
+/* Web3Forms contact form */
+.section-contact .web3-form input,
+.section-contact .web3-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 16px;
+  margin-bottom: 15px;
+  border: 1px solid rgba(255, 243, 226, 0.4);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.07);
+  color: #fff3e2;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+.section-contact .web3-form input::placeholder,
+.section-contact .web3-form textarea::placeholder {
+  color: rgba(255, 243, 226, 0.7);
+}
+
+.section-contact .web3-form input:focus,
+.section-contact .web3-form textarea:focus {
+  outline: none;
+  border-color: #fab80a;
+}
+
+.section-contact .web3-form button {
+  background: #fab80a;
+  color: #435159;
+  font-weight: 700;
+  padding: 14px 40px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.section-contact .web3-form button:hover {
+  background: #fff3e2;
+  transform: translateY(-2px);
+}
+
+.section-contact .form-result {
+  display: none;
+  margin-top: 14px;
+  color: #fff3e2;
+  font-size: 16px;
+}
+
+.section-contact .contact-or {
+  margin-top: 18px;
+  font-size: 15px;
+  color: #fff3e2;
+}
+
+.section-contact .contact-or a {
+  color: #fab80a;
+}
+
 /* Newsletter Section */
 .section-newsletter {
   background-color: #435159;
@@ -860,7 +920,7 @@ title: Home
         <h2><span style="color: #fff3e2">Download my FREE 12-page guide on Avoiding the Top 3 Marketing Mistakes that food brands make</span></h2>
       </div>
       <div class="cta-button-area">
-        <a href="https://www.nourishingfoodmarketing.com/marketing-consultant/download-avoid-top-3-marketing-mistakes-guide/" class="cta-button">TELL ME MORE!</a>
+        <a href="{{ '/resources/top-3-marketing-mistakes/' | relative_url }}" class="cta-button">TELL ME MORE!</a>
       </div>
     </div>
   </div>
@@ -948,7 +1008,7 @@ function closeProjectDetails() {
     <div class="card-deck">
       <div class="card card-1">
         <div class="tes_author">
-          <img src="https://www.nourishingfoodmarketing.com/wp-content/uploads/2020/12/Jeremy-Cohen.jpg" alt="Jeremy Cohen" />
+          <img src="{{ '/assets/images/testimonials/Jeremy-Cohen.jpg' | relative_url }}" alt="Jeremy Cohen" />
           <cite class="tes__name">Jeremy Cohen<span>Co-Founder, the YES Bar</span></cite>
         </div>
         <h4>Made Profound Business Impact</h4>
@@ -957,7 +1017,7 @@ function closeProjectDetails() {
 
       <div class="card card-2">
         <div class="tes_author">
-          <img src="https://www.nourishingfoodmarketing.com/wp-content/uploads/2021/01/Courtney.jpg" alt="Courtney Gillespie" />
+          <img src="{{ '/assets/images/testimonials/Courtney.jpg' | relative_url }}" alt="Courtney Gillespie" />
           <cite class="tes__name">Courtney Gillespie<span>Founder and President, Life's Grape</span></cite>
         </div>
         <h4>Critical to Brand Growth</h4>
@@ -966,7 +1026,7 @@ function closeProjectDetails() {
 
       <div class="card card-3">
         <div class="tes_author">
-          <img src="https://www.nourishingfoodmarketing.com/wp-content/uploads/2020/02/Julia.jpg" alt="Julia Collins" />
+          <img src="{{ '/assets/images/testimonials/Julia.jpg' | relative_url }}" alt="Julia Collins" />
           <cite class="tes__name">Julia Collins<span>Founder and CEO, Moonshot</span></cite>
         </div>
         <h4>Food Start-Up Expert</h4>
@@ -985,10 +1045,22 @@ function closeProjectDetails() {
     </div>
     <div class="row">
       <div class="contact-form">
-        <img src="https://www.nourishingfoodmarketing.com/wp-content/uploads/2020/06/Christie-Lee-Picture-Bubble-Tea-Circle-Tan-Navy.png" alt="Christie Lee Headshot Picture" width="350" />
+        <img src="{{ '/assets/images/Christie-Lee-Contact-Bubble.png' | relative_url }}" alt="Christie Lee Headshot Picture" width="350" />
       </div>
       <div class="contact-info">
-        <p>For inquiries, please contact us at <a href="mailto:info@nourishingfoodmarketing.com" style="color: #fab80a;">info@nourishingfoodmarketing.com</a></p>
+        <form id="nfm-contact-form" class="web3-form">
+          <input type="hidden" name="access_key" value="e10c7864-dbeb-4129-82bf-129ceacc184b">
+          <input type="hidden" name="subject" value="New message from the Nourishing Food Marketing website">
+          <input type="hidden" name="from_name" value="Nourishing Food Marketing Website">
+          <input type="text" name="name" placeholder="Name" required>
+          <input type="text" name="company" placeholder="Company">
+          <input type="email" name="email" placeholder="Email" required>
+          <textarea name="message" placeholder="What can we help you with?" rows="4" required></textarea>
+          <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
+          <button type="submit">Send Message</button>
+          <div id="nfm-contact-result" class="form-result" role="status" aria-live="polite"></div>
+        </form>
+        <p class="contact-or">Prefer email? <a href="mailto:info@nourishingfoodmarketing.com">info@nourishingfoodmarketing.com</a></p>
       </div>
     </div>
   </div>
@@ -1051,6 +1123,32 @@ function closeProjectDetails() {
     formId: '5fadd2dd76d8d6c0f4cf191d',
     containerEl: '#fd-form-5fadd2dd76d8d6c0f4cf191d'
   });
+</script>
+
+<script>
+(function () {
+  var form = document.getElementById('nfm-contact-form');
+  if (!form) return;
+  var result = document.getElementById('nfm-contact-result');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var json = JSON.stringify(Object.fromEntries(new FormData(form).entries()));
+    result.style.display = 'block';
+    result.textContent = 'Sending your message...';
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: json
+    })
+    .then(async function (response) {
+      var data = await response.json();
+      if (response.ok) { result.textContent = 'Thanks! Your message has been sent.'; form.reset(); }
+      else { result.textContent = data.message || 'Something went wrong. Please try again.'; }
+    })
+    .catch(function () { result.textContent = 'Something went wrong. Please email us instead.'; })
+    .finally(function () { setTimeout(function () { result.style.display = 'none'; }, 8000); });
+  });
+})();
 </script>
 
 {{ content }}

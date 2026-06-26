@@ -207,7 +207,7 @@ permalink: /services/marketing-strategy/
 
   <p>Create a Marketing Strategy for your CPG food or beverage brand by working with us one-on-one. We'll do a deep dive into your brand, identify opportunity areas, and develop an actionable Marketing Strategy with tactics, estimated budgets, and timelines just for your business.</p>
 
-  <p>Get unstuck by collaborating with me to establish your Business Objectives, Marketing Objectives, and appropriate Marketing Tactics. We'll use the framework outlined in my <a href="https://www.nourishingfoodmarketing.com/2020/04/27/the-definitive-guide-to-creating-a-marketing-plan-for-food-and-beverage-brands/" style="color: #fab80a;">Definitive Guide to Creating a Marketing Strategy for Food & Beverage Brands</a> to build your results-driven marketing plan. This Marketing Strategy will effectively (achieve your goals) and efficiently (with the least amount of time & money) grow your business.</p>
+  <p>Get unstuck by collaborating with me to establish your Business Objectives, Marketing Objectives, and appropriate Marketing Tactics. We'll use the framework outlined in my <a href="/2020/04/27/the-definitive-guide-to-creating-a-marketing-plan-for-food-and-beverage-brands/" style="color: #fab80a;">Definitive Guide to Creating a Marketing Strategy for Food & Beverage Brands</a> to build your results-driven marketing plan. This Marketing Strategy will effectively (achieve your goals) and efficiently (with the least amount of time & money) grow your business.</p>
 
   <p><strong>We'll get you on the right track with marketing strategies that impress your stakeholders and retailer partners by:</strong></p>
 
