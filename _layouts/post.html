@@ -24,7 +24,15 @@ layout: default
 .pagination a { color: #fab80a; font-weight: 600; }
 .pagination a:hover { color: #e0a500; }
 
+.post-content .two-col { display: flex; gap: 40px; align-items: center; margin: 35px 0; }
+.post-content .two-col .two-col-text { flex: 1 1 auto; }
+.post-content .two-col .two-col-img { flex: 0 0 auto; }
+.post-content .two-col .two-col-img img { margin: 0; }
+
 @media (max-width: 768px) {
+  .post-content .two-col { flex-direction: column; }
+  .post-content .two-col .two-col-img img { margin: 0 auto; }
+
   .post-title { font-size: 32px; }
   .page-content .wrapper { max-width: 100%; }
 }

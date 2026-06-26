@@ -11,10 +11,10 @@ image: /assets/images/blog/Marketing-Funnel-Featured-Image-Logo.png
 
 <p><span style="font-size: 18px;">This is a comprehensive FREE guide for building a Marketing Strategy for food and beverage Consumer Packaged Goods (CPG) companies. I'll take you through a step-by-step framework to walk you through how to build an effective (achieve your goals) and efficient (with the least amount of time &amp; money) Marketing Strategy for your business.</span></p>
 <p><span style="font-size: 18px;">This guide is for you if:</span></p>
-<p><span style="font-size: 18px;"><span style="color: #435159;"> you feel overwhelmed by all things marketing - you know you need to do it, but you don't know how</span></span></p>
-<p><span style="font-size: 18px;"> you feel lost and directionless when you think about your marketing plans so you keep putting it off</span></p>
-<p><span style="font-size: 18px;"> are taking lots of action and spending $$ on your marketing but you just aren't sure if it's growing your business</span></p>
-<p><span style="font-size: 18px;"> you feel uncertainty every time a 'last minute special' lands in your inbox and you spend precious time figuring out if this marketing tactic is worth your while</span></p>
+<p><span style="font-size: 18px;">✔️ you feel overwhelmed by all things marketing - you know you need to do it, but you don't know how</span></p>
+<p><span style="font-size: 18px;">✔️ you feel lost and directionless when you think about your marketing plans so you keep putting it off</span></p>
+<p><span style="font-size: 18px;">✔️ are taking lots of action and spending $$ on your marketing but you just aren't sure if it's growing your business</span></p>
+<p><span style="font-size: 18px;">✔️ you feel uncertainty every time a 'last minute special' lands in your inbox and you spend precious time figuring out if this marketing tactic is worth your while</span></p>
 <p><span style="font-size: 18px;">In the next 8 pages, I'll walk you through my framework for putting together an action-oriented Marketing Strategy that creates clarity around WHY you're doing marketing and HOW you're approaching marketing. I created this framework by adapting the Big Food Marketing Strategies that I learned at Clorox, working on Americana food brands like Hidden Valley Ranch, to a fast-moving and resource-constrained start-up when I started my own brand, Tiny Hero. I've put this Marketing Strategy Framework through its paces as a food founder myself and as a consultant to over a dozen emerging food brands and can't wait for you to get the same clarity in your marketing!</span></p>
 <p><span style="text-decoration: underline;"><span style="font-size: 18px;">Table of Contents</span></span></p>
 <ul>
@@ -164,6 +164,12 @@ image: /assets/images/blog/Marketing-Funnel-Featured-Image-Logo.png
 <p><span style="font-size: 18px;">Every brand is different. Your target consumer is different. Your brand equity is different. Your brand positioning is different. Your retailer strategy is different. Your pricing is different. Because your brand and business is different, I can't tell you what the best Business Objective or Marketing Tactic is for your brand. </span></p>
 <p><span style="font-size: 18px;">You won't get everything right in your first Marketing Strategy. If I were working on your brand, I wouldn't get everything right in your Marketing Strategy, even though I've put together and executed Marketing Strategies for over a dozen brands.   </span></p>
 <p><span style="font-size: 18px;">Marketing is all about testing and learning. Make a plan, have a hypothesis, measure if it's working, and then make it better. </span></p>
+<div class="two-col">
+<div class="two-col-text">
 <p><span style="font-size: 18px;">Imagine this: you're standing at a roulette table. You know the wheel favors some numbers and you want to go to that expensive buffet tonight. How would you figure out which were the winning numbers? You'd place a lot of small bets down and observe a few rounds. Then, you'd go big - put a lot of chips on the number that you think has the best change of winning.</span></p>
 <p><span style="font-size: 18px;">I think marketing is just like roulette. You can build your brand using one well-performing tactic. Impossible built their brand on PR, Dirty Lemon built their brand on digital advertising through social media, KIND built their brand on in-person guerilla sampling, and RightRice built their brand on influencer partnerships. Now, you just need to figure out what works for your brand and continue doing more of these tactics.</span></p>
-<img alt="marketing is like roulette" class="fl-photo-img wp-image-2160 jetpack-lazy-image post-content-image" height="540" itemprop="image" src="{{ '/assets/images/blog/roulette-1.png' | relative_url }}" title="roulette" width="540"/>
+</div>
+<div class="two-col-img">
+<img alt="marketing is like roulette" class="fl-photo-img wp-image-2160 jetpack-lazy-image post-content-image" height="300" itemprop="image" src="{{ '/assets/images/blog/roulette-1.png' | relative_url }}" title="roulette" width="300"/>
+</div>
+</div>
