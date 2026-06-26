@@ -724,6 +724,38 @@ title: Home
     font-size: 30px;
   }
 }
+
+/* Newsletter Section */
+.section-newsletter {
+  background-color: #435159;
+  padding: 80px 20px;
+  text-align: center;
+  color: #fff3e2;
+}
+
+.section-newsletter .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section-newsletter h2 {
+  font-size: 42px;
+  color: #fff3e2;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.section-newsletter p {
+  font-size: 18px;
+  color: #fff3e2;
+  margin-bottom: 30px;
+}
+
+.section-newsletter #fd-form-5fadd2dd76d8d6c0f4cf191d {
+  max-width: 600px;
+  margin: 0 auto;
+}
 </style>
 
 <!-- Hero Section -->
@@ -1005,5 +1037,20 @@ function closeProjectDetails() {
     </div>
   </div>
 </section>
+
+<!-- Newsletter Section -->
+<section class="section-newsletter">
+  <div class="container">
+    <!-- Flodesk inline form renders its own heading, subtext, and fields -->
+    <div id="fd-form-5fadd2dd76d8d6c0f4cf191d"></div>
+  </div>
+</section>
+
+<script>
+  window.fd('form', {
+    formId: '5fadd2dd76d8d6c0f4cf191d',
+    containerEl: '#fd-form-5fadd2dd76d8d6c0f4cf191d'
+  });
+</script>
 
 {{ content }}
