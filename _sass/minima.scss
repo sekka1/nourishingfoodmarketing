@@ -111,51 +111,177 @@ $on-laptop:        800px !default;
   color: #fab80a !important;
 }
 
-/* Mobile dropdown */
+/* Mobile-only nav controls (chevrons / close icon) hidden on desktop */
+.dropdown-checkbox,
+.dropdown-chevron,
+.site-nav .close-icon {
+  display: none;
+}
+
+/* ===== Mobile navigation: full-width slide-down panel ===== */
 @media screen and (max-width: 600px) {
-  /* keep the absolutely-positioned menu within the screen so long
-     submenu items wrap instead of overflowing off the right edge */
+  .site-header .header-wrapper {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .site-header .section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+  }
+
   .site-nav {
-    max-width: calc(100vw - 30px);
-  }
-
-  .trigger {
-    overflow-wrap: break-word;
-  }
-
-  .dropdown {
-    width: 100%;
-  }
-
-  .dropdown-toggle {
-    width: 100%;
-  }
-
-  .dropdown-menu {
     position: static;
-    box-shadow: none;
-    background-color: transparent;
+    float: none;
+    line-height: normal;
+    max-width: none;
+  }
+
+  /* hamburger <-> X toggle button */
+  .site-nav .nav-trigger-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+  }
+
+  .site-nav .menu-icon {
+    display: block;
+    float: none;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    line-height: 0;
+  }
+
+  .site-nav .menu-icon > svg {
+    width: 24px;
+    height: 20px;
+    fill: #333;
+  }
+
+  .site-nav .close-icon {
+    display: none;
+    font-size: 36px;
+    line-height: 1;
+    color: #333;
+  }
+
+  .nav-trigger:checked ~ .nav-trigger-label .menu-icon {
+    display: none;
+  }
+
+  .nav-trigger:checked ~ .nav-trigger-label .close-icon {
+    display: block;
+  }
+
+  /* full-width panel that drops below the header */
+  .site-nav .trigger {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-top: 1px solid #e8e8e8;
+    box-shadow: 0 10px 14px rgba(0, 0, 0, 0.08);
+  }
+
+  .nav-trigger:checked ~ .trigger {
+    display: block;
+  }
+
+  /* top-level rows (Home, Contact): full width, left aligned, divided */
+  .site-nav .trigger > .page-link {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+    padding: 20px;
+    margin: 0;
+    font-size: 18px;
+    border-bottom: 1px solid #e8e8e8;
+  }
+
+  /* dropdown row: label fills the row, chevron sits in a bordered cell */
+  .site-nav .dropdown {
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+    border-bottom: 1px solid #e8e8e8;
+  }
+
+  .site-nav .dropdown .dropdown-toggle {
+    flex: 1 1 auto;
+    width: auto;
+    box-sizing: border-box;
+    text-align: left;
+    padding: 20px;
+    margin: 0;
+    font-size: 18px;
+  }
+
+  .site-nav .dropdown .dropdown-chevron {
+    display: flex;
+    flex: 0 0 58px;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid #e8e8e8;
+    cursor: pointer;
+  }
+
+  .site-nav .dropdown .dropdown-chevron::before {
+    content: "";
+    width: 11px;
+    height: 11px;
+    margin-top: -5px;
+    border-right: 2px solid #8a8a8a;
+    border-bottom: 2px solid #8a8a8a;
+    transform: rotate(45deg);
+    transition: transform 0.2s ease;
+  }
+
+  .dropdown-checkbox:checked ~ .dropdown-chevron::before {
+    margin-top: 3px;
+    transform: rotate(225deg);
+  }
+
+  /* submenu: collapsed until its chevron is tapped */
+  .site-nav .dropdown .dropdown-menu {
+    flex: 0 0 100%;
+    display: none;
+    position: static;
     min-width: 0;
     width: 100%;
     padding: 0;
-    margin-left: 0;
-    display: none;
+    margin: 0;
+    background: #fafafa;
+    box-shadow: none;
+    border-radius: 0;
+    border-top: 1px solid #e8e8e8;
   }
 
-  .dropdown:hover .dropdown-menu {
-    display: none;
-  }
-
-  /* Show dropdown items when mobile menu is open */
-  .nav-trigger:checked ~ .trigger .dropdown .dropdown-menu {
+  .dropdown-checkbox:checked ~ .dropdown-menu {
     display: block;
   }
 
-  .dropdown-item {
-    padding: 8px 15px 8px 30px;
-    font-size: 14px;
+  .site-nav .dropdown-menu .dropdown-item {
     display: block;
+    text-align: left;
+    padding: 16px 20px 16px 35px;
+    font-size: 16px;
     white-space: normal;
+    border-bottom: 1px solid #ececec;
+  }
+
+  .site-nav .dropdown-menu .dropdown-item:last-child {
+    border-bottom: none;
   }
 }
 
