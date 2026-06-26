@@ -20,7 +20,16 @@
 
           <div class="trigger">
             <a class="page-link" href="{{ '/' | relative_url }}">Home</a>
-            <a class="page-link" href="{{ '/about/' | relative_url }}">About</a>
+
+            <div class="dropdown">
+              <span class="page-link dropdown-toggle" tabindex="0" style="cursor: pointer;">FREE Resources</span>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="{{ '/resources/top-3-marketing-mistakes/' | relative_url }}">Top 3 Marketing Mistakes to Avoid</a>
+                <a class="dropdown-item" href="{{ '/2020/04/27/the-definitive-guide-to-creating-a-marketing-plan-for-food-and-beverage-brands/' | relative_url }}">Definitive Guide to Creating a Marketing Strategy</a>
+                <a class="dropdown-item" href="{{ '/blog/' | relative_url }}">Blog</a>
+              </div>
+            </div>
+
             <div class="dropdown">
               <a class="page-link dropdown-toggle" href="{{ '/services/' | relative_url }}">Services</a>
               <div class="dropdown-menu">
@@ -31,7 +40,7 @@
                 <a class="dropdown-item" href="{{ '/services/brand-primer/' | relative_url }}">Brand Primer Template</a>
               </div>
             </div>
-            <a class="page-link" href="{{ '/blog/' | relative_url }}">Blog</a>
+
             <a class="page-link" href="{{ '/contact/' | relative_url }}">Contact</a>
           </div>
         </nav>
