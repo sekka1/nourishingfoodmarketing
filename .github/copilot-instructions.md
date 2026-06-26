@@ -386,8 +386,8 @@ aborts the **entire** Pages build (symptom: `Invalid CSS after "..."` in the
 correctly and leave NUL padding when shrinking a file — always confirm the file
 is clean after editing SCSS.
 
-**Validate before pushing:** run `./scripts/preflight.sh` (Git Bash/WSL) or `scripts/preflight.ps1` (PowerShell). It checks every
-`.scss` for control bytes and balanced braces, then runs `jekyll build` and
+**Validate before pushing:** run `./scripts/preflight.sh` (Git Bash/WSL) or `scripts/preflight.ps1` (PowerShell). It scans all text files for stray NUL/control bytes (this corruption can hit any
+file, not just SCSS), checks SCSS brace balance, then runs `jekyll build` and
 `htmlproofer` (mirrors the CI commands).
 
 **CI coverage gap:** `.github/workflows/test-pages.yml` only runs on push/PR to
@@ -413,3 +413,78 @@ inline `font-size` spans are forced to 16px. Watch for other inline-style
 artifacts in migrated `_posts/*.md` (e.g. a legacy `color:#7cfc00` lawn-green
 that was cleaned to the brand color `#435159`). When migrating new posts, prefer
 the original site as the source of truth and strip inline WordPress styles.
+
+## Navigation — desktop + mobile (don't break this)
+
+Header markup lives in `_includes/header.html`; all nav styling is in
+`_sass/minima.scss`. Top-level menu: **Home · FREE Resources · Services ·
+Contact**.
+
+- **Desktop** dropdowns open on hover.
+- **Mobile (`<= 600px`)** is a custom full-width collapsible panel, NOT the
+  default Minima box. Each dropdown has a hidden `.dropdown-checkbox` plus a
+  `.dropdown-chevron` `<label>` — a pure-CSS toggle (no JS). The hamburger
+  swaps to an X via `#nav-trigger:checked`. The `.trigger` becomes an
+  absolutely-positioned full-width panel below the sticky header.
+
+If you add/rename a nav item, keep that structure (checkbox + chevron label
+per dropdown) and **test at <= 600px**: long submenu labels previously
+overflowed off the right edge, and the menu must stay within
+`max-width: calc(100vw - 30px)`.
+
+## Newsletter / Flodesk forms
+
+`_includes/head.html` loads Flodesk `universal.js` (as `fd`). There are TWO
+forms — use the right id:
+
+- Popup: formId `5fadcb70692a71a0b90460d3` (fires on page load).
+- **Inline** footer newsletter: formId `5fadd2dd76d8d6c0f4cf191d`. It is
+  embedded at the bottom of the home page (`_layouts/home.html`) via
+  `<div id="fd-form-5fadd2dd76d8d6c0f4cf191d">` + a
+  `window.fd('form', { formId, containerEl: '#fd-form-...' })` call. The
+  inline form renders its OWN heading/subtext/fields — don't add a duplicate
+  `<h2>`. (The popup id renders an iframe popup, not inline fields.)
+
+## Page headings
+
+`_layouts/page.html` does NOT auto-print the page title (removed to stop
+duplicate headings like "Services" + "Purchase Our Brand Marketing
+Services"). Every `layout: page` page must include its own top heading in its
+content. Blog posts use `_layouts/post.html`, which still shows the title.
+
+## Verifying visual changes without a local build
+
+GitHub Pages is the only build that runs on a branch. To preview before
+pushing, inject CSS/markup into the live page via the browser devtools, and
+emulate mobile by constraining a container's width. The original WordPress
+site (the visual source of truth) lazy-loads images, has scroll-reveal
+animations, and fires a newsletter popup — all of which can interfere with
+screenshots. Always confirm on a real device after deploy.
+
+## Cross-platform support (required)
+
+This site must work and look correct across all of:
+
+- **Desktop** browsers — Chrome, Firefox, Safari, Edge (1200px+).
+- **Mobile** — **Android (Chrome)** and **iOS (Safari)** are the primary
+  mobile targets — plus tablets in between.
+
+Responsive breakpoints: **768px** (layout stacking, type scaling) and
+**600px** (the mobile nav panel). Test every change at three widths: desktop,
+~768px (tablet), and ~390-412px (iPhone / Pixel).
+
+iOS Safari + cross-browser gotchas to watch:
+
+- Prefer `width: 100%` over `100vw` where horizontal overflow matters —
+  `100vw` includes the scrollbar and causes sideways scroll/cutoff on iOS.
+- Keep form `input` `font-size` **>= 16px** so iOS Safari doesn't auto-zoom
+  the page when a field is focused.
+- `position: sticky` (the header) plus the absolutely-positioned mobile menu
+  panel work on modern iOS/Android, but verify them on a real iPhone — Safari
+  handles sticky/z-index and viewport units differently from Chrome.
+- Tap targets >= 44x44px (see Mobile-Friendly Design).
+- Don't rely on hover for essential actions: desktop dropdowns open on hover,
+  so the mobile menu must keep its explicit tap (chevron) equivalent.
+
+Emulators and desktop window-resizing don't catch Safari-specific issues, so
+confirm on at least one real Android device and one real iPhone after deploy.

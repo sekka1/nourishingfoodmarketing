@@ -9,14 +9,19 @@ set -uo pipefail
 cd "$(dirname "$0")/.."
 fail=0
 
-echo "==> 1. SCSS sanity check (_sass + assets)"
-# The GitHub Pages Sass converter aborts the ENTIRE build on stray control
-# bytes (NUL etc.) or a syntax error in any .scss file. Editors/tools that
-# don't truncate properly can leave NUL padding -- check for it explicitly.
+echo "==> 1a. Text-file integrity (NUL / control bytes)"
+# Some editors/tools don't truncate properly and leave NUL padding when a
+# file is shrunk. A NUL in a .scss aborts the whole Pages build; in other
+# files it silently corrupts content. Scan all text sources.
 while IFS= read -r f; do
   if LC_ALL=C grep -qP '[\x00-\x08\x0B\x0C\x0E-\x1F]' "$f"; then
-    echo "   FAIL: $f has control/NUL bytes (will break the Pages build)"; fail=1
+    echo "   FAIL: $f has NUL/control bytes"; fail=1
   fi
+done < <(find . -path ./.git -prune -o -path ./_site -prune -o -path ./vendor -prune -o -path ./node_modules -prune -o -type f \( -name '*.scss' -o -name '*.css' -o -name '*.html' -o -name '*.md' -o -name '*.markdown' -o -name '*.yml' -o -name '*.yaml' -o -name '*.json' -o -name '*.js' -o -name '*.xml' \) -print)
+[ "$fail" = 0 ] && echo "   ok"
+
+echo "==> 1b. SCSS brace balance"
+while IFS= read -r f; do
   ob=$(tr -cd '{' < "$f" | wc -c); cb=$(tr -cd '}' < "$f" | wc -c)
   if [ "$ob" != "$cb" ]; then echo "   FAIL: $f unbalanced braces ($ob '{' vs $cb '}')"; fail=1; fi
 done < <(find _sass assets -name '*.scss')

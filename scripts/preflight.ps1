@@ -1,19 +1,28 @@
 #!/usr/bin/env pwsh
 # Preflight validation (PowerShell) for the Nourishing Food Marketing site.
 # Native Windows equivalent of preflight.sh -- no bash required.
-#   pwsh scripts/preflight.ps1     (or: powershell -File scripts\preflight.ps1)
+#   pwsh scripts/preflight.ps1     (or: powershell -ExecutionPolicy Bypass -File scripts\preflight.ps1)
 Set-Location (Join-Path $PSScriptRoot '..')
 $fail = $false
 
-Write-Host "==> 1. SCSS sanity check (_sass + assets)"
-# GitHub Pages' old Sass aborts the whole build on a stray control/NUL byte
-# or unbalanced braces in any .scss file.
+function Test-ControlBytes($path) {
+  $bytes = [System.IO.File]::ReadAllBytes($path)
+  foreach ($b in $bytes) { if (($b -le 8) -or ($b -eq 11) -or ($b -eq 12) -or (($b -ge 14) -and ($b -le 31))) { return $true } }
+  return $false
+}
+
+Write-Host "==> 1a. Text-file integrity (NUL / control bytes)"
+$exts = '*.scss','*.css','*.html','*.md','*.markdown','*.yml','*.yaml','*.json','*.js','*.xml'
+$textFiles = Get-ChildItem -Recurse -File -Include $exts -ErrorAction SilentlyContinue |
+  Where-Object { $_.FullName -notmatch '\\(\.git|_site|vendor|node_modules)\\' }
+foreach ($f in $textFiles) {
+  if (Test-ControlBytes $f.FullName) { Write-Host "   FAIL: $($f.Name) has NUL/control bytes"; $fail = $true }
+}
+if (-not $fail) { Write-Host "   ok" }
+
+Write-Host "==> 1b. SCSS brace balance"
 $scss = Get-ChildItem -Recurse -Path _sass, assets -Filter *.scss -ErrorAction SilentlyContinue
 foreach ($f in $scss) {
-  $bytes = [System.IO.File]::ReadAllBytes($f.FullName)
-  $bad = $false
-  foreach ($b in $bytes) { if (($b -le 8) -or ($b -eq 11) -or ($b -eq 12) -or (($b -ge 14) -and ($b -le 31))) { $bad = $true; break } }
-  if ($bad) { Write-Host "   FAIL: $($f.Name) has control/NUL bytes (will break the Pages build)"; $fail = $true }
   $text = [System.IO.File]::ReadAllText($f.FullName)
   $ob = ([regex]::Matches($text, '{')).Count
   $cb = ([regex]::Matches($text, '}')).Count
