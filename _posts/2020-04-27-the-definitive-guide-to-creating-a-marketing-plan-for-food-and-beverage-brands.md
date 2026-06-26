@@ -55,9 +55,6 @@ image: /assets/images/blog/Marketing-Funnel-Featured-Image-Logo.png
 <p>When your target consumer knows about your brand. Marketers sometimes refer to unaided and aided awareness. Unaided means that a consumer names your brand when asked “When you think of crackers, what brands come to mind?” and aided means that a consumer picks your brand when asked “Which of the following cracker brands have you heard of?” Unaided is better than aided, because this indicates that consumers have a stronger memory of your brand.</p>
 <h4>Trial:</h4>
 <p>When your consumer buys and tries your product. Once your target consumer is aware of your brand, it typically takes 5-7 experiences with your brand (eg, advertising, great social media content, seeing your product on-shelf) before they'll buy your product. It's just like getting kids to eat vegetables! The end goal of your consumer trying your product is for it to be SO delicious that your new consumer keeps coming back for more and becomes a life-long consumer.</p>
-<p style="text-align: center;"><span style="color: #fbc944;"><strong><span style="font-size: 18px;">Get my FREE Guide to Avoiding the Top 3 Marketing Mistakes<br/>
-that Food and Beverage CPG Brands Make</span></strong></span></p>
-<center><strong><a class="button" href="{{ '/contact/' | relative_url }}">TELL ME MORE</a></strong></center>
 <a name="business-objectives"></a>
 <h2>Step One: Start with your Business Objectives and Key Results</h2>
 <p><span style="font-size: 18px;"> The first step in building a kickass Marketing Strategy is writing down your business objectives and key results. Your marketing strategy needs to contribute to these business objectives - after all, why else are you marketing your brand?</span></p>
@@ -152,8 +149,6 @@ that Food and Beverage CPG Brands Make</span></strong></span></p>
 <p><span style="font-size: 18px;">Your brand could have many consumers buying your product once for a special occasion. Then, your Marketing Strategy should focus on the Repeat Purchase stage of the marketing funnel. </span></p>
 <p><span style="font-size: 18px;"> Or, your brand could have a few consumers buying your product every day. Then, your Marketing Strategy should focus on the Brand Advocate and Awareness parts of the marketing funnel.</span></p>
 <p><span style="font-size: 18px;">Using consumer research, figure out what your consumer base looks like and the Marketing Objectives that will help you best achieve your Business Objectives. Then, lay out the tactics that will most effectively and efficiently achieve those Marketing Objectives.</span></p>
-<p style="text-align: center;"><span style="color: #fbc944;"><strong><span style="font-size: 18px;">Want examples and tips on consumer research? Listen to my podcast where I discuss my consumer research framework with Alli Ball.</span></strong></span></p>
-<center><strong><a class="button" href="https://www.alliball.com/podcast/38">LET'S LISTEN</a></strong></center>
 <a name="key-metrics"></a>
 <h2>Step Three: Establish Key Metrics for each of your Marketing Tactics</h2>
 <p><span style="font-size: 18px;">It's critical to set key metrics for each of your marketing tactics. These metrics should be your tactic's budget, timing, and results. These metrics keep you accountable but also give you a tool for planning. They help you: </span></p>
@@ -162,8 +157,6 @@ that Food and Beverage CPG Brands Make</span></strong></span></p>
 <li><span style="font-size: 18px;">Define success by improving your own metrics over time. Are you gaining more Instagram followers week-over-week? Are your Costs Per Click decreasing month-over-month? Are your in-store velocities increasing year-by-year? </span></li>
 <li><span style="font-size: 18px;">Use industry benchmarks to analyze how you're doing compared to other food and beverage brands</span></li>
 </ul>
-<p style="text-align: center;"><span style="font-size: 18px; color: #fbc944;"><strong>Need help creating an effective and efficient Marketing Strategy? Work with me 1-on-1 to create a thought-through plan that you can't wait to execute on!</strong></span></p>
-<center><strong><a class="button" href="{{ '/services/' | relative_url }}">LEARN MORE</a></strong></center>
 <a name="execute-test-learn"></a>
 <h2>Step Four: Execution, Testing, and Learning</h2>
 <p><span style="font-size: 18px;">Hooray, give yourself a pat on the back - it's a lot of work to put a Marketing Strategy together! It's so worth it to have a clear, focused approach to your marketing efforts. </span><span style="font-size: 18px;">Now, you have to put this glorious plan into action. Here are a few parting thoughts to help set you up for success:</span></p>
@@ -174,11 +167,3 @@ that Food and Beverage CPG Brands Make</span></strong></span></p>
 <p><span style="font-size: 18px;">Imagine this: you're standing at a roulette table. You know the wheel favors some numbers and you want to go to that expensive buffet tonight. How would you figure out which were the winning numbers? You'd place a lot of small bets down and observe a few rounds. Then, you'd go big - put a lot of chips on the number that you think has the best change of winning.</span></p>
 <p><span style="font-size: 18px;">I think marketing is just like roulette. You can build your brand using one well-performing tactic. Impossible built their brand on PR, Dirty Lemon built their brand on digital advertising through social media, KIND built their brand on in-person guerilla sampling, and RightRice built their brand on influencer partnerships. Now, you just need to figure out what works for your brand and continue doing more of these tactics.</span></p>
 <img alt="marketing is like roulette" class="fl-photo-img wp-image-2160 jetpack-lazy-image post-content-image" height="540" itemprop="image" src="{{ '/assets/images/blog/roulette-1.png' | relative_url }}" title="roulette" width="540"/>
-<p style="text-align: center;"><span style="font-size: 18px;"><strong> Check out more of our Actionable Blog Posts for Food and Beverage CPGs</strong></span></p>
-<center><strong><a class="button" href="{{ '/blog/' | relative_url }}">Read More</a></strong></center>
-<p><a name="contact"></a></p>
-<p style="text-align: center;"><span style="font-size: 20px;">Thanks so much for reading my Definitive Guide to Creating a Marketing Strategy for Food and Beverage Brands! If you've read all the way down here, you're thinking about your Marketing Strategy deeply.</span></p>
-<p><span class="emoji" style="font-size: 18px;">Let's build your Marketing Strategy together:</span></p>
-<p><span class="emoji" style="font-size: 18px;"> Expert guidance from a former food founder and Big Food brand marketer that has worked with 12+ emerging CPG brands</span></p>
-<p><span class="emoji" style="font-size: 18px;"> Proven framework for getting clear on your Marketing Objectives and growing your business</span></p>
-<center><strong><a class="button" href="{{ '/services/' | relative_url }}">LEARN MORE</a></strong></center>

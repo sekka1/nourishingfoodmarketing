@@ -375,3 +375,8 @@ p {
     color: #e0a500;
   }
 }
+
+/* Remove the light-blue border line under the footer (minima default) */
+.site-footer {
+  border-top: none;
+}
