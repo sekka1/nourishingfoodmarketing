@@ -11,7 +11,7 @@ image: /assets/images/blog/Marketing-Funnel-Featured-Image-Logo.png
 
 <p><span style="font-size: 18px;">This is a comprehensive FREE guide for building a Marketing Strategy for food and beverage Consumer Packaged Goods (CPG) companies. I'll take you through a step-by-step framework to walk you through how to build an effective (achieve your goals) and efficient (with the least amount of time &amp; money) Marketing Strategy for your business.</span></p>
 <p><span style="font-size: 18px;">This guide is for you if:</span></p>
-<p><span style="font-size: 18px;"><span style="color: #7cfc00;"> you feel overwhelmed by all things marketing - you know you need to do it, but you don't know how</span></span></p>
+<p><span style="font-size: 18px;"><span style="color: #435159;"> you feel overwhelmed by all things marketing - you know you need to do it, but you don't know how</span></span></p>
 <p><span style="font-size: 18px;"> you feel lost and directionless when you think about your marketing plans so you keep putting it off</span></p>
 <p><span style="font-size: 18px;"> are taking lots of action and spending $$ on your marketing but you just aren't sure if it's growing your business</span></p>
 <p><span style="font-size: 18px;"> you feel uncertainty every time a 'last minute special' lands in your inbox and you spend precious time figuring out if this marketing tactic is worth your while</span></p>
