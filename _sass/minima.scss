@@ -145,3 +145,93 @@ $on-laptop:        800px !default;
     display: block;
   }
 }
+
+/* ============================================================
+   Original-theme typography port (OnePress  ->  static site)
+   The live WordPress site uses Libre Baskerville for all
+   headings and navigation, uppercased and letter-spaced, with
+   lighter-weight Roboto body copy. These rules recreate that
+   look across every page.
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+$heading-font: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font;
+  font-weight: 700;
+  color: #333;
+}
+
+/* Body copy: lighter, airier weight like the original */
+p {
+  font-weight: 300;
+}
+
+/* Hero, home section headers, and the project subtitle get the
+   uppercase + tracked-out treatment from the live site. */
+.hero-section h1 {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.hero-section h3 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.section-about h2,
+.section-founder h2,
+.section-approach h2,
+.section-services h2,
+.section-cta h2,
+.section-projects h2,
+.section-testimonials h2,
+.section-contact h2,
+.section-blog h2 {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.section-projects .section-subtitle {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Service-card titles stay title-case (matches original h4) */
+.service-item h4 {
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+/* Blog/article and post titles stay title-case for readability */
+.list-article-content h2,
+.entry-title,
+.post-title,
+.post-content h2,
+.post-content h3,
+.post-content h4 {
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+/* Navigation: serif small-caps like the original top menu */
+.site-nav .page-link,
+.site-nav .dropdown-toggle {
+  font-family: $heading-font;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* In-content links in brand gold, matching the original */
+.section-founder .founder-bio a,
+.post-content a {
+  color: #fab80a;
+
+  &:hover {
+    color: #e0a500;
+  }
+}
