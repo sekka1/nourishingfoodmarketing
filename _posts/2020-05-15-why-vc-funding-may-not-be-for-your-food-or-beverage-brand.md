@@ -11,7 +11,7 @@ image: /assets/images/blog/money2-scaled.jpg
 
 <p><span style="font-size: 18px;">Let’s talk about the two main funding paths for food and beverage CPG brands and how your funding changes how you run your business. For almost all CPGs, funding is a necessity as you’re building your business. I will pull back the curtain on this sometimes opaque subject by drawing on my experiences at Harvard Business School, as a food founder myself, and as an executive for 3 CPG start-ups so you can make an informed choice about how you raise money.</span></p>
 <p><span style="font-size: 18px;">Read this post if</span></p>
-<p><span style="font-size: 18px;"><span style="color: #7cfc00;"> you're a food brand that needs funding and you're wondering where it's going to come from </span></span></p>
+<p><span style="font-size: 18px;"><span style="color: #435159;"> you're a food brand that needs funding and you're wondering where it's going to come from </span></span></p>
 <p><span style="font-size: 18px;"> you want to understand the world of venture capitalists (VCs) and institutional funding</span></p>
 <p><span style="font-size: 18px;"> you are concerned about how your company will change once you raise seven figures</span></p>
 <p><span style="font-size: 18px;">This post isn't a guide on how to raise funding, but rather on how to think about raising money.</span></p>

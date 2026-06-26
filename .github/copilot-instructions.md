@@ -375,10 +375,41 @@ Use Jekyll's `relative_url` filter for all paths:
 
 ## Support Files
 
-- **Migration Guide:** `.claude/skills/migrate-wordpress-page.md` - Complete WordPress to Jekyll migration documentation
-- **Backup Layout:** `_layouts/home-old-backup.html` - Original simple home layout before migration
-- **Migration Docs:** `MIGRATION.md` - Home page migration documentation
+- **Migration Guide:** `.claude/skills/migrate-wordpress-page.md` - Complete WordP
+## Build, CI & Gotchas (lessons learned)
 
-## Contact
+**The GitHub Pages deploy uses a strict, old Sass.** GitHub Pages builds with
+the `github-pages` gem (Jekyll 3.10 + jekyll-sass-converter 1.5.2 / sass 3.7.4).
+A syntax error *or a single stray control/NUL byte* anywhere in `_sass/*.scss`
+aborts the **entire** Pages build (symptom: `Invalid CSS after "..."` in the
+"pages build and deployment" action). Some editors/tools don't truncate files
+correctly and leave NUL padding when shrinking a file — always confirm the file
+is clean after editing SCSS.
 
-For questions about this repository or the migration process, refer to the comprehensive migration guide at `.claude/skills/migrate-wordpress-page.md`.
+**Validate before pushing:** run `./scripts/preflight.sh` (Git Bash/WSL) or `scripts/preflight.ps1` (PowerShell). It checks every
+`.scss` for control bytes and balanced braces, then runs `jekyll build` and
+`htmlproofer` (mirrors the CI commands).
+
+**CI coverage gap:** `.github/workflows/test-pages.yml` only runs on push/PR to
+`main`, so feature-branch pushes are NOT linted by it — the Pages build is the
+only check that runs on a branch deploy. Run preflight locally on branches. A `.gitattributes` normalizes line endings (LF) to prevent whole-file CRLF/LF diff churn.
+
+## Header navigation (must match the live site)
+
+Top-level menu is **Home · FREE Resources · Services · Contact** (no standalone
+About or Blog link). Defined in `_includes/header.html`:
+- **FREE Resources** (hover dropdown): Top 3 Marketing Mistakes to Avoid →
+  `/resources/top-3-marketing-mistakes/`, Definitive Guide (the 2020-04-27 post),
+  Blog → `/blog/`.
+- **Services** (dropdown → `/services/`): the five service pages.
+Nav links render in Libre Baskerville, 13px, `#333`, uppercase (see `_sass/minima.scss`).
+
+## Blog post styling & migration artifacts
+
+Blog post presentation lives in an inline `<style>` block in
+`_layouts/post.html` (wider ~1140px column, 16px body, large left-aligned serif
+title). It also **normalizes WordPress/Beaver Builder migration leftovers**:
+inline `font-size` spans are forced to 16px. Watch for other inline-style
+artifacts in migrated `_posts/*.md` (e.g. a legacy `color:#7cfc00` lawn-green
+that was cleaned to the brand color `#435159`). When migrating new posts, prefer
+the original site as the source of truth and strip inline WordPress styles.
