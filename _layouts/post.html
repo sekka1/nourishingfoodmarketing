@@ -29,12 +29,33 @@ layout: default
 .post-content .two-col .two-col-img { flex: 0 0 auto; }
 .post-content .two-col .two-col-img img { margin: 0; }
 
+/* Tables: scroll horizontally within their own box on narrow screens so a
+   wide table never makes the whole page slide sideways */
+.post-content table {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-collapse: collapse;
+  margin: 0 0 24px;
+  font-size: 15px;
+}
+.post-content table th,
+.post-content table td {
+  border: 1px solid #e2e2e2;
+  padding: 8px 12px;
+  vertical-align: top;
+  text-align: left;
+}
+
 @media (max-width: 768px) {
   .post-content .two-col { flex-direction: column; }
   .post-content .two-col .two-col-img img { margin: 0 auto; }
 
   .post-title { font-size: 32px; }
   .page-content .wrapper { max-width: 100%; }
+  .pagination { flex-wrap: wrap; gap: 12px; }
 }
 </style>
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
