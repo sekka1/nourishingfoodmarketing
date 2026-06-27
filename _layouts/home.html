@@ -829,9 +829,56 @@ title: Home
   margin-bottom: 30px;
 }
 
-.section-newsletter #fd-form-5fadd2dd76d8d6c0f4cf191d {
-  max-width: 600px;
+.section-newsletter .newsletter-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 640px;
   margin: 0 auto;
+}
+
+.section-newsletter .newsletter-form input[type="text"],
+.section-newsletter .newsletter-form input[type="email"] {
+  flex: 1 1 200px;
+  box-sizing: border-box;
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 243, 226, 0.4);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.07);
+  color: #fff3e2;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+.section-newsletter .newsletter-form input::placeholder {
+  color: rgba(255, 243, 226, 0.7);
+}
+
+.section-newsletter .newsletter-form button {
+  flex: 0 0 auto;
+  background: #fab80a;
+  color: #435159;
+  font-weight: 700;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.section-newsletter .newsletter-form button:hover {
+  background: #fff3e2;
+}
+
+.section-newsletter .form-result {
+  flex: 0 0 100%;
+  display: none;
+  margin-top: 12px;
+  color: #fff3e2;
+  font-size: 16px;
 }
 </style>
 
@@ -1048,7 +1095,7 @@ function closeProjectDetails() {
         <img src="{{ '/assets/images/Christie-Lee-Contact-Bubble.png' | relative_url }}" alt="Christie Lee Headshot Picture" width="350" />
       </div>
       <div class="contact-info">
-        <form id="nfm-contact-form" class="web3-form">
+        <form id="nfm-contact-form" class="web3-form" data-success="Thanks! Your message has been sent.">
           <input type="hidden" name="access_key" value="e10c7864-dbeb-4129-82bf-129ceacc184b">
           <input type="hidden" name="subject" value="New message from the Nourishing Food Marketing website">
           <input type="hidden" name="from_name" value="Nourishing Food Marketing Website">
@@ -1113,40 +1160,43 @@ function closeProjectDetails() {
 <!-- Newsletter Section -->
 <section class="section-newsletter">
   <div class="container">
-    <!-- Flodesk inline form renders its own heading, subtext, and fields -->
-    <div id="fd-form-5fadd2dd76d8d6c0f4cf191d"></div>
+    <h2>Subscribe to my Newsletter!</h2>
+    <p>Get actionable tips on how to grow and nourish your food brand directly to your inbox.</p>
+    <form id="nfm-newsletter-form" class="web3-form newsletter-form" data-success="Thanks! You're subscribed.">
+      <input type="hidden" name="access_key" value="e10c7864-dbeb-4129-82bf-129ceacc184b">
+      <input type="hidden" name="subject" value="New newsletter signup from the website">
+      <input type="hidden" name="from_name" value="Nourishing Food Marketing Newsletter">
+      <input type="text" name="first_name" placeholder="First name" aria-label="First name">
+      <input type="email" name="email" placeholder="Email address" required aria-label="Email address">
+      <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
+      <button type="submit">Subscribe</button>
+      <div id="nfm-newsletter-result" class="form-result" role="status" aria-live="polite"></div>
+    </form>
   </div>
 </section>
 
 <script>
-  window.fd('form', {
-    formId: '5fadd2dd76d8d6c0f4cf191d',
-    containerEl: '#fd-form-5fadd2dd76d8d6c0f4cf191d'
-  });
-</script>
-
-<script>
 (function () {
-  var form = document.getElementById('nfm-contact-form');
-  if (!form) return;
-  var result = document.getElementById('nfm-contact-result');
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var json = JSON.stringify(Object.fromEntries(new FormData(form).entries()));
-    result.style.display = 'block';
-    result.textContent = 'Sending your message...';
-    fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: json
-    })
-    .then(async function (response) {
-      var data = await response.json();
-      if (response.ok) { result.textContent = 'Thanks! Your message has been sent.'; form.reset(); }
-      else { result.textContent = data.message || 'Something went wrong. Please try again.'; }
-    })
-    .catch(function () { result.textContent = 'Something went wrong. Please email us instead.'; })
-    .finally(function () { setTimeout(function () { result.style.display = 'none'; }, 8000); });
+  document.querySelectorAll('form.web3-form').forEach(function (form) {
+    var result = form.querySelector('.form-result');
+    var success = form.getAttribute('data-success') || 'Thanks! Your submission has been received.';
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var json = JSON.stringify(Object.fromEntries(new FormData(form).entries()));
+      if (result) { result.style.display = 'block'; result.textContent = 'Sending...'; }
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: json
+      })
+      .then(async function (response) {
+        var data = await response.json();
+        if (result) result.textContent = response.ok ? success : (data.message || 'Something went wrong. Please try again.');
+        if (response.ok) form.reset();
+      })
+      .catch(function () { if (result) result.textContent = 'Something went wrong. Please try again.'; })
+      .finally(function () { if (result) setTimeout(function () { result.style.display = 'none'; }, 8000); });
+    });
   });
 })();
 </script>
