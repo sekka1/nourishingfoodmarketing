@@ -35,8 +35,6 @@ image: /assets/images/blog/photo-1578916171728-46686eac8d58.jpg
 <p><span style="font-size: 18px;"><b>Awareness driving</b><span style="font-weight: 400;"> tactics help to get the word out about your products. A consumer typically has to see your brand 5-7 times before they look for your products in-store. </span></span></p>
 <p><span style="font-weight: 400; font-size: 18px;">Tactics that require working media budget (otherwise known as pay-to-play) are geo-targeted Facebook/Google ads, giveaway partnerships with the retailer’s social media, and some influencer partnerships. </span></p>
 <p><span style="font-weight: 400; font-size: 18px;">Tactics that do not require a working media budget (but of course require investment - you may need to invest time and money to write a press release but you don’t need to pay the journalist to write the magazine article) include social media campaigns, newsletter announcements of distribution and promotions at a particular retailer, your website, PR, and some influencer partnerships. </span></p>
-<p style="text-align: center;"><span style="color: #fbc944;"><strong><span style="font-size: 18px;">Check out my Definitive Guide to Creating a Marketing Plan for Food Brands</span></strong></span></p>
-<center><strong><a class="button" href="/2020/04/27/the-definitive-guide-to-creating-a-marketing-plan-for-food-and-beverage-brands/">LET'S GO</a></strong></center>
 <p><a name="budget-building"></a></p>
 <h2><strong>Building a Sales and Marketing Budget</strong></h2>
 <p><span style="font-size: 18px;"><span style="font-weight: 400;">Before you build a Sales and Marketing budget, please determine your Business Objectives first! This will help you determine tactic prioritization and budget allocation. You can read more about setting Business Objectives and Key Results in my </span><a href="/2020/04/27/the-definitive-guide-to-creating-a-marketing-plan-for-food-and-beverage-brands/"><span style="font-weight: 400;">Definitive Guide to Creating a Marketing Strategy</span></a><span style="font-weight: 400;">.</span></span></p>
@@ -76,8 +74,6 @@ image: /assets/images/blog/photo-1578916171728-46686eac8d58.jpg
 </ol>
 </li>
 </ul>
-<p style="text-align: center;"><span style="color: #fff3e2;"><strong><span style="font-size: 18px;">Download my FREE Guide to Avoiding the Top 3 Marketing Mistakes that food and beverage CPG brands make</span></strong></span></p>
-<center><strong><a class="button" href="{{ '/contact/' | relative_url }}">TELL ME MORE</a></strong></center>
 <p><a name="final-thoughts"></a></p>
 <h2><span style="font-size: 28px;"><strong>Final Thoughts</strong></span></h2>
 <p><span style="font-weight: 400; font-size: 18px;">As you develop your 2021 sales and marketing plan, know that it’s not set in stone. It should change as you get new information: how your sales are doing in year two of a global pandemic, performance results of your tactics, and new opportunities. You’ll need to demonstrate to retailers that you will support your product through sales and marketing support but how you do it is up to you.</span></p>

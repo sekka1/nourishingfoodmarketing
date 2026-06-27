@@ -11,9 +11,9 @@ image: /assets/images/blog/money2-scaled.jpg
 
 <p><span style="font-size: 18px;">Let’s talk about the two main funding paths for food and beverage CPG brands and how your funding changes how you run your business. For almost all CPGs, funding is a necessity as you’re building your business. I will pull back the curtain on this sometimes opaque subject by drawing on my experiences at Harvard Business School, as a food founder myself, and as an executive for 3 CPG start-ups so you can make an informed choice about how you raise money.</span></p>
 <p><span style="font-size: 18px;">Read this post if</span></p>
-<p><span style="font-size: 18px;"><span style="color: #435159;"> you're a food brand that needs funding and you're wondering where it's going to come from </span></span></p>
-<p><span style="font-size: 18px;"> you want to understand the world of venture capitalists (VCs) and institutional funding</span></p>
-<p><span style="font-size: 18px;"> you are concerned about how your company will change once you raise seven figures</span></p>
+<p><span style="font-size: 18px;">✔️ you're a food brand that needs funding and you're wondering where it's going to come from</span></p>
+<p><span style="font-size: 18px;">✔️ you want to understand the world of venture capitalists (VCs) and institutional funding</span></p>
+<p><span style="font-size: 18px;">✔️ you are concerned about how your company will change once you raise seven figures</span></p>
 <p><span style="font-size: 18px;">This post isn't a guide on how to raise funding, but rather on how to think about raising money.</span></p>
 <p><span style="text-decoration: underline;"><span style="font-size: 18px;">Table of Contents</span></span></p>
 <ul>
@@ -39,8 +39,6 @@ image: /assets/images/blog/money2-scaled.jpg
 <p><span style="font-size: 18px;">2. Now, you’re bootstrapping your way to prove traction and show that consumers love your product. You’re dialing in the right target consumer, retailers, product positioning, and messaging. Once your product is flying off the shelves and other stores want your product, now you need more cash to fuel your growth.</span></p>
 <p><span style="font-size: 18px;">You might say, “Wait a minute, my product is flying off the shelves, why do I need to take on outside money to grow?” Unfortunately, the old adage that you need to spend money to make money is doubly true in the CPG industry. Typical CPG profit margins don’t leave you with enough cash to expand your distribution because your distribution growth typically happens in large jumps (ie, 500 Whole Foods stores) and not gradually. The payment cycles of the CPG industry is particularly difficult from a cash management perspective: if you expand to more stores and open up another distribution center, you don’t have enough cash on hand to pay for manufacturing a larger order when retailers and distributors pay you 90-120 days after you’ve made that larger order. The money you need to operate your business is typically called ‘working capital.’</span></p>
 <p><span style="font-size: 18px;">3. OK, now it’s time to raise money. You create your fundraising deck and start to pitch…but who should you pitch to?</span></p>
-<p style="text-align: center;"><span style="color: #fff3e2;"><strong><span style="font-size: 18px;">Get my FREE Guide to Avoiding the Top 3 Marketing Mistakes that food and beverage CPG brands make</span></strong></span></p>
-<center><strong><a class="button" href="{{ '/contact/' | relative_url }}">TELL ME MORE</a></strong></center>
 <a name="business-objectives"></a>
 <p><a name="institutional-funding"></a></p>
 <h2><span style="font-size: 28px;"><strong>Option 1: Institutional Funding Writes Big Checks and Changes How You Do Business</strong></span></h2>
@@ -54,8 +52,6 @@ image: /assets/images/blog/money2-scaled.jpg
 <li><span style="font-size: 18px;">you are in a category where you need significant promotional dollars to break through (eg, chips)</span></li>
 <li><span style="font-size: 18px;">you are building a new category and must do a lot of consumer education (eg, Perfect Bar)</span></li>
 </ul>
-<p style="text-align: center;"><span style="color: #fbc944;"><strong><span style="font-size: 18px;">Check out my Definitive Guide to Creating a Marketing Plan for Food Brands</span></strong></span></p>
-<center><strong><a class="button" href="/2020/04/27/the-definitive-guide-to-creating-a-marketing-plan-for-food-and-beverage-brands/">LET'S GO</a></strong></center>
 <p><a name="friends-family"></a></p>
 <h2><span style="font-size: 28px;"><strong>Option 2: Patient Friends &amp; Family Funding</strong></span></h2>
 <p><span style="font-size: 18px;">You can also raise money from friends and family, angel investors, or crowdsourcing (eg, Kickstarter) to get the cash you need to run your business. Money from these sources is typically much more patient with fewer expectations. They expect free product, quarterly updates, and a payout when you make it big.</span></p>
