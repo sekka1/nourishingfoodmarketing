@@ -90,7 +90,7 @@ title: Home
 /* Founder Section */
 .section-founder {
   background-color: #fff3e2;
-  padding: 100px 20px;
+  padding: 130px 20px;
 }
 
 .section-founder .container {
@@ -661,6 +661,22 @@ title: Home
 
 /* Responsive */
 @media (max-width: 768px) {
+  /* Prevent long headings (e.g. TESTIMONIALS) from overflowing and causing
+     horizontal scroll on phones */
+  .section-about h2, .section-founder h2, .section-approach h2,
+  .section-services h2, .section-cta h2, .section-projects h2,
+  .section-testimonials h2, .section-contact h2, .section-blog h2,
+  .section-newsletter h2 {
+    font-size: 30px;
+    letter-spacing: 1px;
+    overflow-wrap: break-word;
+  }
+
+  /* Testimonial cards stack on mobile (the 300px min-width was forcing width) */
+  .card-deck {
+    grid-template-columns: 1fr;
+  }
+
   .hero-section h1 {
     font-size: 32px;
   }
