@@ -7,10 +7,15 @@ categories: [brand-marketing]
 permalink: /2022/03/22/5-lessons-on-how-to-drive-grocery-velocities-for-your-cpg-brand-shopper-marketing/
 image: /assets/images/blog/lona-0BaEdsR8IRY-unsplash.jpg
 ---
-<img src="{{ '/assets/images/blog/lona-0BaEdsR8IRY-unsplash.jpg' | relative_url }}" alt="5 Lessons on How to Drive Grocery Velocities for your CPG Brand (Big or Small) with Shopper Marketing" class="post-featured-image" />
-
+<div class="two-col">
+<div class="two-col-text">
 <p><span style="font-size: 18px;"><span style="font-weight: 400;">Does your CPG brand have a solid strategy to move products off the grocery shelf? Most companies focus too much energy on getting a product </span><b>ON </b><span style="font-weight: 400;">the shelf but have zero clue how to sell it </span><b>OFF </b><span style="font-weight: 400;">the shelf once it gets there.  Most of the big retailers only give one chance for new brands to succeed, so having a solid plan in place is crucial to your product’s success.  Let me help you with those details. In this blog, you will learn how to think about building your shopper marketing plan and which tactics you should consider for your shopper marketing plan.</span></span></p>
 <p><span style="font-weight: 400; font-size: 18px;">Below you will find the 5 sales and marketing lessons I’ve learned throughout the years. And, don’t miss my money chart at the end for my framework on how to think about shopper marketing and the tactics that you should think about at every brand stage! </span></p>
+</div>
+<div class="two-col-img">
+<img src="{{ '/assets/images/blog/lona-0BaEdsR8IRY-unsplash.jpg' | relative_url }}" alt="store shelves" width="300" />
+</div>
+</div>
 <p><span style="text-decoration: underline;"><span style="font-size: 18px;">Table of Contents</span></span></p>
 <p><span style="font-weight: 400; font-size: 18px;">My 5 Shopper Marketing Lessons:</span></p>
 <ul>
@@ -27,7 +32,6 @@ image: /assets/images/blog/lona-0BaEdsR8IRY-unsplash.jpg
 <li aria-level="2" style="font-weight: 400;"><a href="#1000-stores"><span style="font-weight: 400; font-size: 18px;">1000+ stores</span></a></li>
 <li aria-level="2"><a href="#master-list"><span style="font-weight: 400; font-size: 18px;">Master Shopping Marketing Tactic List</span></a></li>
 </ul>
-<img alt="store shelves" class="fl-photo-img wp-image-2467 jetpack-lazy-image post-content-image" height="1024" itemprop="image" src="{{ '/assets/images/blog/lona-0BaEdsR8IRY-unsplash.jpg' | relative_url }}" title="store shelves" width="768"/>
 <p><a name="moving-products"></a></p>
 <h2><span style="font-size: 24px;"><strong>Lesson #1: Moving products off of the store shelf is YOUR job, not the retailers.  </strong></span></h2>
 <p><span style="font-size: 18px;">This is one of the dirty little secrets of this industry.  You have worked so hard to get your product ON the shelf, and it’s still your job to see the process through and get your product back OFF of the shelf as well.  It’s not the brokers’ job, it’s not your buyers’ job, it’s not even the retailers’ job.  It’s all yours!  Think of it this way: you are renting space within a store.  Your brand has probably already spent a lot of money to get on the shelf, but the investment doesn’t stop there.  </span></p>

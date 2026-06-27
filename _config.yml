@@ -110,3 +110,18 @@ pagination:
   indexpage: 'index'
 
 ############################################################
+
+# Keep tooling, the old-site backup, and build cruft out of the generated site
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules
+  - .sass-cache
+  - .jekyll-cache
+  - scripts
+  - old-site-backup
+  - original-dg.html
+  - minima.gemspec
+  - README.md
+  - MIGRATION.md

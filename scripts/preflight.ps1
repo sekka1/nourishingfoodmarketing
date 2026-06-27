@@ -14,7 +14,7 @@ function Test-ControlBytes($path) {
 Write-Host "==> 1a. Text-file integrity (NUL / control bytes)"
 $exts1 = '*.scss','*.css','*.html','*.md','*.markdown','*.yml','*.yaml','*.json','*.js','*.xml'
 $textFiles = Get-ChildItem -Recurse -File -Include $exts1 -ErrorAction SilentlyContinue |
-  Where-Object { $_.FullName -notmatch '\\(\.git|_site|vendor|node_modules)\\' }
+  Where-Object { $_.FullName -notmatch '\\(\.git|_site|vendor|node_modules|old-site-backup)\\' }
 foreach ($f in $textFiles) {
   if (Test-ControlBytes $f.FullName) { Write-Host "   FAIL: $($f.Name) has NUL/control bytes"; $fail = $true }
 }
@@ -34,7 +34,7 @@ Write-Host "==> 1c. Referenced image/file assets exist on disk"
 # Catches HTMLProofer's 'internal image does not exist' without a build.
 $pattern = '/?assets/[A-Za-z0-9._/-]+\.(png|jpg|jpeg|gif|svg|webp|ico|pdf|pptx)'
 $contentFiles = Get-ChildItem -Recurse -File -Include *.html,*.md -ErrorAction SilentlyContinue |
-  Where-Object { $_.FullName -notmatch '\\(\.git|_site|vendor|node_modules|\.github|\.claude)\\' -and $_.Name -notin @('MIGRATION.md','README.md') }
+  Where-Object { $_.FullName -notmatch '\\(\.git|_site|vendor|node_modules|\.github|\.claude|old-site-backup)\\' -and $_.Name -notin @('MIGRATION.md','README.md') }
 $refs = New-Object System.Collections.Generic.HashSet[string]
 foreach ($cf in $contentFiles) {
   foreach ($m in [regex]::Matches([System.IO.File]::ReadAllText($cf.FullName), $pattern)) { [void]$refs.Add($m.Value) }

@@ -14,7 +14,7 @@ while IFS= read -r f; do
   if LC_ALL=C grep -qP '[\x00-\x08\x0B\x0C\x0E-\x1F]' "$f"; then
     echo "   FAIL: $f has NUL/control bytes"; fail=1
   fi
-done < <(find . -path ./.git -prune -o -path ./_site -prune -o -path ./vendor -prune -o -path ./node_modules -prune -o -type f \( -name '*.scss' -o -name '*.css' -o -name '*.html' -o -name '*.md' -o -name '*.markdown' -o -name '*.yml' -o -name '*.yaml' -o -name '*.json' -o -name '*.js' -o -name '*.xml' \) -print)
+done < <(find . -path ./.git -prune -o -path ./old-site-backup -prune -o -path ./_site -prune -o -path ./vendor -prune -o -path ./node_modules -prune -o -type f \( -name '*.scss' -o -name '*.css' -o -name '*.html' -o -name '*.md' -o -name '*.markdown' -o -name '*.yml' -o -name '*.yaml' -o -name '*.json' -o -name '*.js' -o -name '*.xml' \) -print)
 [ "$fail" = 0 ] && echo "   ok"
 
 echo "==> 1b. SCSS brace balance"
@@ -35,7 +35,7 @@ while IFS= read -r ref; do
 done < <(grep -rhoE "/?assets/[A-Za-z0-9._/-]+\.(png|jpe?g|gif|svg|webp|ico|pdf|pptx)" \
    --include='*.html' --include='*.md' \
    --exclude-dir=.git --exclude-dir=_site --exclude-dir=vendor --exclude-dir=node_modules \
-   --exclude-dir=.github --exclude-dir=.claude \
+   --exclude-dir=.github --exclude-dir=.claude --exclude-dir=old-site-backup \
    --exclude=MIGRATION.md --exclude=README.md \
    . 2>/dev/null | sort -u)
 [ "$c" = 0 ] && echo "   ok"
