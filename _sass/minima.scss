@@ -376,7 +376,10 @@ p {
   }
 }
 
-/* Remove the light-blue border line under the footer (minima default) */
+/* Footer has no content on this site; collapse it so it doesn't render
+   as a white bar at the bottom of the page. */
 .site-footer {
   border-top: none;
+  padding: 0;
+  display: none;
 }
