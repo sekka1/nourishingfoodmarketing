@@ -518,6 +518,7 @@ title: Home
   background-color: #435159;
   padding: 80px 20px;
   color: #fff3e2;
+  scroll-margin-top: 90px;
 }
 
 .section-contact .container {
@@ -1087,7 +1088,7 @@ function closeProjectDetails() {
 </section>
 
 <!-- Contact Section -->
-<section class="section-contact">
+<section class="section-contact" id="contact">
   <div class="container">
     <h2>Get in Touch</h2>
     <div class="row">
@@ -1107,7 +1108,6 @@ function closeProjectDetails() {
           <button type="submit">Send Message</button>
           <div id="nfm-contact-result" class="form-result" role="status" aria-live="polite"></div>
         </form>
-        <p class="contact-or">Prefer email? <a href="mailto:info@nourishingfoodmarketing.com">info@nourishingfoodmarketing.com</a></p>
       </div>
     </div>
   </div>
@@ -1154,24 +1154,6 @@ function closeProjectDetails() {
         <a class="btn btn-theme-primary-outline" href="{{ '/blog/' | relative_url }}">Read Our Blog</a>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- Newsletter Section -->
-<section class="section-newsletter">
-  <div class="container">
-    <h2>Subscribe to my Newsletter!</h2>
-    <p>Get actionable tips on how to grow and nourish your food brand directly to your inbox.</p>
-    <form id="nfm-newsletter-form" class="web3-form newsletter-form" data-success="Thanks! You're subscribed.">
-      <input type="hidden" name="access_key" value="e10c7864-dbeb-4129-82bf-129ceacc184b">
-      <input type="hidden" name="subject" value="New newsletter signup from the website">
-      <input type="hidden" name="from_name" value="Nourishing Food Marketing Newsletter">
-      <input type="text" name="first_name" placeholder="First name" aria-label="First name">
-      <input type="email" name="email" placeholder="Email address" required aria-label="Email address">
-      <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
-      <button type="submit">Subscribe</button>
-      <div id="nfm-newsletter-result" class="form-result" role="status" aria-live="polite"></div>
-    </form>
   </div>
 </section>
 
